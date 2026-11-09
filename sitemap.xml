@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>None./</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None"/>
+    </url>
+    <url>
+        <loc>None00_start/01_repo_tour/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None00_start/01_repo_tour/"/>
+    </url>
+    <url>
+        <loc>None00_start/02_house_rules/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None00_start/02_house_rules/"/>
+    </url>
+    <url>
+        <loc>None00_start/03_access/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None00_start/03_access/"/>
+    </url>
+    <url>
+        <loc>None00_start/04_environment/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None00_start/04_environment/"/>
+    </url>
+    <url>
+        <loc>None00_start/05_first_day/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None00_start/05_first_day/"/>
+    </url>
+    <url>
+        <loc>None00_start/06_glossary/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None00_start/06_glossary/"/>
+    </url>
+    <url>
+        <loc>None00_start/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None00_start/"/>
+    </url>
+    <url>
+        <loc>None10_guides/01_demo/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None10_guides/01_demo/"/>
+    </url>
+    <url>
+        <loc>None10_guides/02_serve_models/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None10_guides/02_serve_models/"/>
+    </url>
+    <url>
+        <loc>None10_guides/03_ask_question/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None10_guides/03_ask_question/"/>
+    </url>
+    <url>
+        <loc>None10_guides/04_run_campaign/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None10_guides/04_run_campaign/"/>
+    </url>
+    <url>
+        <loc>None10_guides/05_retrieval_matrix/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None10_guides/05_retrieval_matrix/"/>
+    </url>
+    <url>
+        <loc>None10_guides/06_question_suite/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None10_guides/06_question_suite/"/>
+    </url>
+    <url>
+        <loc>None10_guides/07_analyse_run/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None10_guides/07_analyse_run/"/>
+    </url>
+    <url>
+        <loc>None10_guides/08_score_run/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None10_guides/08_score_run/"/>
+    </url>
+    <url>
+        <loc>None10_guides/09_production_graph/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None10_guides/09_production_graph/"/>
+    </url>
+    <url>
+        <loc>None10_guides/10_corpus_update/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None10_guides/10_corpus_update/"/>
+    </url>
+    <url>
+        <loc>None10_guides/11_graph_lots/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None10_guides/11_graph_lots/"/>
+    </url>
+    <url>
+        <loc>None10_guides/12_kg_rebuild/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None10_guides/12_kg_rebuild/"/>
+    </url>
+    <url>
+        <loc>None10_guides/13_code_changes/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None10_guides/13_code_changes/"/>
+    </url>
+    <url>
+        <loc>None10_guides/14_cluster/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None10_guides/14_cluster/"/>
+    </url>
+    <url>
+        <loc>None10_guides/15_end_to_end/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None10_guides/15_end_to_end/"/>
+    </url>
+    <url>
+        <loc>None10_guides/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None10_guides/"/>
+    </url>
+    <url>
+        <loc>None20_concepts/01_architecture/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None20_concepts/01_architecture/"/>
+    </url>
+    <url>
+        <loc>None20_concepts/02_data_flow/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None20_concepts/02_data_flow/"/>
+    </url>
+    <url>
+        <loc>None20_concepts/03_corpus/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None20_concepts/03_corpus/"/>
+    </url>
+    <url>
+        <loc>None20_concepts/04_kg_pipeline/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None20_concepts/04_kg_pipeline/"/>
+    </url>
+    <url>
+        <loc>None20_concepts/05_graph_model/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None20_concepts/05_graph_model/"/>
+    </url>
+    <url>
+        <loc>None20_concepts/06_retrieval/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None20_concepts/06_retrieval/"/>
+    </url>
+    <url>
+        <loc>None20_concepts/07_agent/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None20_concepts/07_agent/"/>
+    </url>
+    <url>
+        <loc>None20_concepts/08_evaluation/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None20_concepts/08_evaluation/"/>
+    </url>
+    <url>
+        <loc>None20_concepts/10_measured_negatives/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None20_concepts/10_measured_negatives/"/>
+    </url>
+    <url>
+        <loc>None20_concepts/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None20_concepts/"/>
+    </url>
+    <url>
+        <loc>None40_operations/01_server/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None40_operations/01_server/"/>
+    </url>
+    <url>
+        <loc>None40_operations/02_services/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None40_operations/02_services/"/>
+    </url>
+    <url>
+        <loc>None40_operations/03_ports/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None40_operations/03_ports/"/>
+    </url>
+    <url>
+        <loc>None40_operations/04_data_locations/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None40_operations/04_data_locations/"/>
+    </url>
+    <url>
+        <loc>None40_operations/05_backups/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None40_operations/05_backups/"/>
+    </url>
+    <url>
+        <loc>None40_operations/06_troubleshooting/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None40_operations/06_troubleshooting/"/>
+    </url>
+    <url>
+        <loc>None40_operations/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None40_operations/"/>
+    </url>
+    <url>
+        <loc>None50_handover/01_project_state/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None50_handover/01_project_state/"/>
+    </url>
+    <url>
+        <loc>None50_handover/02_open_issues/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None50_handover/02_open_issues/"/>
+    </url>
+    <url>
+        <loc>None50_handover/03_known_traps/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None50_handover/03_known_traps/"/>
+    </url>
+    <url>
+        <loc>None50_handover/04_contacts/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None50_handover/04_contacts/"/>
+    </url>
+    <url>
+        <loc>None50_handover/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None50_handover/"/>
+    </url>
+    <url>
+        <loc>None90_meta/conventions/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None90_meta/conventions/"/>
+    </url>
+    <url>
+        <loc>None90_meta/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None90_meta/"/>
+    </url>
+    <url>
+        <loc>None90_meta/status/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None90_meta/status/"/>
+    </url>
+    <url>
+        <loc>None90_meta/inventory/env_vars/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None90_meta/inventory/env_vars/"/>
+    </url>
+    <url>
+        <loc>None90_meta/inventory/python_modules/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None90_meta/inventory/python_modules/"/>
+    </url>
+    <url>
+        <loc>None90_meta/inventory/untracked_and_external/</loc>
+        <lastmod>2026-11-09</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="it" href="None90_meta/inventory/untracked_and_external/"/>
+    </url>
+</urlset>

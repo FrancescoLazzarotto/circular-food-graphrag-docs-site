@@ -1,0 +1,3608 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../10_corpus_update/">
+      
+      
+        <link rel="next" href="../12_kg_rebuild/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Aggiungere documenti al grafo (lotti) - circular-food-graphrag — documentazione</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../assets/status.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quando-serve" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../.." title="circular-food-graphrag — documentazione" class="md-header__button md-logo" aria-label="circular-food-graphrag — documentazione" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            circular-food-graphrag — documentazione
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Aggiungere documenti al grafo (lotti)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Tema scuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Tema scuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Tema chiaro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Tema chiaro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../00_start/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Inizia qui
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Guide pratiche
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../20_concepts/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Come funziona
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../40_operations/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Server e servizi
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../50_handover/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Consegne
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../90_meta/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Sulla documentazione
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="circular-food-graphrag — documentazione" class="md-nav__button md-logo" aria-label="circular-food-graphrag — documentazione" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    circular-food-graphrag — documentazione
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../00_start/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inizia qui
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Inizia qui
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_start/01_repo_tour/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Giro della repo
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_start/02_house_rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPU, porte e dischi
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_start/03_access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accesso al server
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_start/04_environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ambiente Python
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_start/05_first_day/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Il primo giorno
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_start/06_glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossario
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide pratiche
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guide pratiche
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_demo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Avviare e fermare la demo
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_serve_models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Servire i modelli
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_ask_question/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fare una domanda dal terminale
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_run_campaign/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lanciare una campagna
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_retrieval_matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matrice di retrieval
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_question_suite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generare una suite di domande
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_analyse_run/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analizzare un run
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_score_run/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Valutare un run
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09_production_graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Il grafo di produzione
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_corpus_update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aggiornare i documenti della demo
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aggiungere documenti al grafo (lotti)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aggiungere documenti al grafo (lotti)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quando-serve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quando serve
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cosa-tocca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cosa tocca
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#il-grafo-dei-lotti-porta-7690" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Il grafo dei lotti (porta 7690)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-passi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I passi
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I passi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gli-stati" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gli stati
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-prepare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. prepare
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-extract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. extract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-resolve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. resolve
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-write" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. write
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-curate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. curate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. index
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. check
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#togliere-un-lotto-remove" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Togliere un lotto: remove
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-protezioni-sul-grafo-di-destinazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le protezioni sul grafo di destinazione
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#se-qualcosa-va-storto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Se qualcosa va storto
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12_kg_rebuild/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ricostruire il grafo
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13_code_changes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modificare il codice
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14_cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Il cluster (non più usato)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15_end_to_end/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Percorsi completi
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../20_concepts/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Come funziona
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Come funziona
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../20_concepts/01_architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architettura
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../20_concepts/02_data_flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso dei dati
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../20_concepts/03_corpus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Il corpus
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../20_concepts/04_kg_pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Come si costruisce il grafo
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../20_concepts/05_graph_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modello del grafo
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../20_concepts/06_retrieval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Retrieval e strategie
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../20_concepts/07_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L'agente
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../20_concepts/08_evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Valutazione
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../20_concepts/10_measured_negatives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Già provato, non funziona
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../40_operations/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Server e servizi
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Server e servizi
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../40_operations/01_server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    La macchina
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../40_operations/02_services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Servizi e timer
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../40_operations/03_ports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Porte
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../40_operations/04_data_locations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dove stanno i dati
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../40_operations/05_backups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup e ripristino
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../40_operations/06_troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problemi noti e soluzioni
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../50_handover/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Consegne
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Consegne
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../50_handover/01_project_state/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stato del progetto
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../50_handover/02_open_issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Questioni aperte
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../50_handover/03_known_traps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trappole note
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../50_handover/04_contacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dove stanno le credenziali
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../90_meta/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sulla documentazione
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sulla documentazione
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../90_meta/conventions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regole di scrittura
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../90_meta/status/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stato della documentazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inventory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Inventory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../90_meta/inventory/env_vars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environment variables read in code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../90_meta/inventory/python_modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python modules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../90_meta/inventory/untracked_and_external/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Untracked and external locations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quando-serve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quando serve
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cosa-tocca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cosa tocca
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#il-grafo-dei-lotti-porta-7690" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Il grafo dei lotti (porta 7690)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-passi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I passi
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I passi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gli-stati" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gli stati
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-prepare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. prepare
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-extract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. extract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-resolve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. resolve
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-write" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. write
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-curate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. curate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. index
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. check
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#togliere-un-lotto-remove" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Togliere un lotto: remove
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-protezioni-sul-grafo-di-destinazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le protezioni sul grafo di destinazione
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#se-qualcosa-va-storto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Se qualcosa va storto
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Aggiungere documenti al grafo (lotti)</h1>
+
+<h2 id="quando-serve">Quando serve<a class="headerlink" href="#quando-serve" title="Permanent link">&para;</a></h2>
+<p>Per mettere nel grafo uno o più documenti del registro <strong>senza ricostruire il grafo</strong>. Un
+<strong>lotto</strong> è un insieme di documenti che entrano insieme; si può anche togliere di nuovo
+(<code>lots.py:1-25</code>). Per rendere i documenti solo cercabili come testo nella demo basta
+<a href="../10_corpus_update/">Aggiornare i documenti della demo</a>.</p>
+<p>Cosa fa un lotto nel grafo (<code>lots.py:645-699, 774-889</code>):</p>
+<ul>
+<li>i nodi <strong>nuovi</strong> e tutti gli archi del lotto portano la proprietà <code>lotto</code> con il nome del
+  lotto;</li>
+<li>i nodi <strong>già nel grafo</strong> tengono nome, etichetta e proprietà: ricevono solo i nomi del
+  lotto come <code>aliases</code>; il loro vettore (<code>:NodeVec</code>) viene cancellato perché l'indice
+  vettoriale lo ricalcoli con gli alias nuovi (<code>lots.py:860</code>);</li>
+<li><code>remove</code> toglie archi e nodi del lotto e rimette gli alias com'erano (<code>lots.py:892-950</code>).</li>
+</ul>
+<h2 id="cosa-tocca">Cosa tocca<a class="headerlink" href="#cosa-tocca" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>risorsa</th>
+<th>effetto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>grafo</td>
+<td><strong>scrive</strong> nel grafo indicato da <code>--neo4j-env</code> (passi <code>write</code>, <code>curate</code>, <code>index</code>, <code>remove</code>); <code>resolve</code> e <code>check</code> lo <strong>leggono</strong> senza scrivere (<code>graph_lot.py:202-204</code>, <code>:374-407</code>); <code>prepare</code> ed <code>extract</code> non toccano nessun grafo: l'estrazione usa l'indirizzo <code>bolt://127.0.0.1:1</code>, dove non ascolta niente (<code>lots.py:50-52, 274</code>)</td>
+</tr>
+<tr>
+<td>modelli</td>
+<td><code>extract</code>, <code>resolve</code> e <code>curate</code> chiamano l'estrattore indicato a <code>prepare</code> (default <code>http://localhost:8000/v1</code>, <code>Qwen/Qwen3-32B-AWQ</code>, <code>graph_lot.py:465-467</code>); <code>curate</code> e <code>index</code> chiamano l'encoder su <code>:8002</code> (<code>graphrag/embeddings.py:54</code>); <code>resolve</code> carica in proprio <code>sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2</code> (<code>kg_pipeline/config.yaml:67</code>, <code>lots.py:500-502</code>), sul dispositivo indicato da <code>KG_EMBED_DEVICE</code>; se la variabile è vuota <code>sentence-transformers</code> sceglie <code>cuda</code> quando c'è una GPU (<code>sentence_transformers/util.py:1449-1450</code>), cioè la prima scheda visibile: con <code>CUDA_VISIBLE_DEVICES</code> non impostato è la GPU 0</td>
+</tr>
+<tr>
+<td>disco</td>
+<td>tutto nella cartella del lotto <code>kg_pipeline/artifacts/graph_lots/&lt;lotto&gt;/</code>; registro dei lotti in <code>kg_pipeline/artifacts/graph_lots/ledger.json</code>; cache dei vettori dei nomi in <code>kg_pipeline/artifacts/graph_lots/vettori_nomi/</code>. Il backup di <code>write</code> per il lotto di prova pesa 17 MB</td>
+</tr>
+</tbody>
+</table>
+<h2 id="il-grafo-dei-lotti-porta-7690">Il grafo dei lotti (porta 7690)<a class="headerlink" href="#il-grafo-dei-lotti-porta-7690" title="Permanent link">&para;</a></h2>
+<p>Un lotto si prova prima su una <strong>copia</strong> del grafo di produzione, non sulla produzione.
+La copia sta in un'installazione Neo4j separata:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>installazione</td>
+<td><code>/mnt/storage/&lt;utente&gt;/neo4j_lots/neo4j-community-5.26.0</code></td>
+</tr>
+<tr>
+<td>porte</td>
+<td>Bolt 7690, HTTP 7477 (<code>conf/neo4j.conf:356-357</code>)</td>
+</tr>
+<tr>
+<td>contenuto prima del lotto di prova</td>
+<td>copia del grafo di produzione (dichiarato dal responsabile del progetto): 23.250 nodi e 30.693 archi (<code>scrittura.json</code> del lotto, chiave <code>prima</code>)</td>
+</tr>
+<tr>
+<td>credenziali</td>
+<td>nel file <code>grafo.env</code> della cartella del lotto, leggibile solo dal proprietario; il file nasce al primo <code>index</code> o <code>remove</code> del lotto (<code>graph_lot.py:349-355, 358-363</code>), quindi prima serve un file con le <code>NEO4J_*</code> preparato a mano</td>
+</tr>
+</tbody>
+</table>
+<p>Accenderlo e spegnerlo:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">NEO_HOME</span><span class="o">=</span>/mnt/storage/&lt;utente&gt;/neo4j_lots/neo4j-community-5.26.0<span class="w"> </span><span class="nv">BOLT_PORT</span><span class="o">=</span><span class="m">7690</span><span class="w"> </span><span class="nv">HTTP_PORT</span><span class="o">=</span><span class="m">7477</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>bash<span class="w"> </span>scripts/serving/start_neo4j_staging.sh
+<span class="c1"># … stampa "bolt://localhost:7690 is up"</span>
+
+<span class="nv">JAVA_HOME</span><span class="o">=</span>/home/&lt;utente&gt;/.conda/envs/neo4jrt<span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/home/&lt;utente&gt;/.conda/envs/neo4jrt/bin:<span class="nv">$PATH</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>/mnt/storage/&lt;utente&gt;/neo4j_lots/neo4j-community-5.26.0/bin/neo4j<span class="w"> </span>stop
+</code></pre></div>
+<p>Lo script di staging accetta <code>NEO_HOME</code>, <code>BOLT_PORT</code> e <code>HTTP_PORT</code> da fuori
+(<code>start_neo4j_staging.sh:18, 20-21</code>); la configurazione di <code>neo4j_lots</code> ha già le righe delle
+porte, quindi lo script non la modifica (<code>:29-41</code>). Acceso, conteneva 24.232
+nodi (982 del lotto di prova) e 32.131 archi (1.438 del
+lotto), gli stessi numeri di <code>controllo.json</code>.</p>
+<h2 id="i-passi">I passi<a class="headerlink" href="#i-passi" title="Permanent link">&para;</a></h2>
+<p>Tutti i comandi si lanciano dalla radice della repo, nell'ambiente <code>graphllm</code>. Gli script che un passo lancia ricevono
+<code>PYTHONNOUSERSITE=1</code> (<code>graph_lot.py:91, 109</code>). Ogni passo
+legge e scrive la cartella del lotto e si può rilanciare dopo un'interruzione.</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>scripts/kg/graph_lot.py<span class="w"> </span>prepare<span class="w"> </span>--lot<span class="w"> </span>&lt;lotto&gt;<span class="w"> </span>--docs<span class="w"> </span>&lt;id1,id2,...&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--corpus-dir<span class="w"> </span><span class="s2">"&lt;cartella del corpus&gt;"</span><span class="w"> </span>--graph<span class="w"> </span>bolt://localhost:7690
+python<span class="w"> </span>scripts/kg/graph_lot.py<span class="w"> </span>extract<span class="w"> </span>--lot<span class="w"> </span>&lt;lotto&gt;
+python<span class="w"> </span>scripts/kg/graph_lot.py<span class="w"> </span>resolve<span class="w"> </span>--lot<span class="w"> </span>&lt;lotto&gt;<span class="w"> </span>--neo4j-env<span class="w"> </span>&lt;file&gt;
+python<span class="w"> </span>scripts/kg/graph_lot.py<span class="w"> </span>write<span class="w">   </span>--lot<span class="w"> </span>&lt;lotto&gt;<span class="w"> </span>--neo4j-env<span class="w"> </span>&lt;file&gt;
+python<span class="w"> </span>scripts/kg/graph_lot.py<span class="w"> </span>curate<span class="w">  </span>--lot<span class="w"> </span>&lt;lotto&gt;<span class="w"> </span>--neo4j-env<span class="w"> </span>&lt;file&gt;<span class="w">   </span><span class="c1"># si ferma una volta: vedi sotto</span>
+python<span class="w"> </span>scripts/kg/graph_lot.py<span class="w"> </span>curate<span class="w">  </span>--lot<span class="w"> </span>&lt;lotto&gt;<span class="w"> </span>--neo4j-env<span class="w"> </span>&lt;file&gt;
+python<span class="w"> </span>scripts/kg/graph_lot.py<span class="w"> </span>index<span class="w">   </span>--lot<span class="w"> </span>&lt;lotto&gt;<span class="w"> </span>--neo4j-env<span class="w"> </span>&lt;file&gt;
+python<span class="w"> </span>scripts/kg/graph_lot.py<span class="w"> </span>check<span class="w">   </span>--lot<span class="w"> </span>&lt;lotto&gt;<span class="w"> </span>--neo4j-env<span class="w"> </span>&lt;file&gt;
+python<span class="w"> </span>scripts/kg/graph_lot.py<span class="w"> </span>status
+</code></pre></div>
+<p><code>&lt;file&gt;</code> contiene le variabili <code>NEO4J_*</code> del grafo di destinazione. Per il grafo dei lotti
+è il <code>grafo.env</code> di un lotto già indicizzato lì (lo crea <code>index</code>); per la produzione
+<code>~/.config/graphrag/graph-db.env</code>.</p>
+<p>Opzioni (<code>graph_lot.py:453-490</code>):</p>
+<table>
+<thead>
+<tr>
+<th>opzione</th>
+<th>dove</th>
+<th>default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--lots-dir</code></td>
+<td>prima del nome del passo</td>
+<td><code>kg_pipeline/artifacts/graph_lots</code></td>
+</tr>
+<tr>
+<td><code>--lot</code></td>
+<td>ogni passo</td>
+<td>obbligatoria</td>
+</tr>
+<tr>
+<td><code>--docs</code>, <code>--corpus-dir</code>, <code>--graph</code></td>
+<td><code>prepare</code></td>
+<td>obbligatorie</td>
+</tr>
+<tr>
+<td><code>--database</code></td>
+<td><code>prepare</code></td>
+<td><code>neo4j</code></td>
+</tr>
+<tr>
+<td><code>--registry</code></td>
+<td><code>prepare</code></td>
+<td><code>product/corpus_registry.csv</code></td>
+</tr>
+<tr>
+<td><code>--llm-base-url</code>, <code>--llm-model</code></td>
+<td><code>prepare</code></td>
+<td><code>http://localhost:8000/v1</code>, <code>Qwen/Qwen3-32B-AWQ</code></td>
+</tr>
+<tr>
+<td><code>--base-config</code></td>
+<td><code>prepare</code></td>
+<td><code>kg_pipeline/config.yaml</code></td>
+</tr>
+<tr>
+<td><code>--neo4j-env</code></td>
+<td>tutti i passi tranne <code>prepare</code> ed <code>extract</code></td>
+<td>obbligatoria</td>
+</tr>
+<tr>
+<td><code>--allow-remote</code>, <code>--allow-staging</code></td>
+<td>gli stessi passi</td>
+<td>spente</td>
+</tr>
+<tr>
+<td><code>--force</code></td>
+<td><code>remove</code></td>
+<td>spenta</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gli-stati">Gli stati<a class="headerlink" href="#gli-stati" title="Permanent link">&para;</a></h3>
+<p>Il registro <code>ledger.json</code> tiene lo stato di ogni lotto. Ogni passo controlla lo stato prima
+di partire:</p>
+<table>
+<thead>
+<tr>
+<th>stato</th>
+<th>dopo</th>
+<th>il lotto è nel grafo?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>preparato</code></td>
+<td><code>prepare</code> (<code>lots.py:288</code>)</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>estratto</code></td>
+<td><code>extract</code> (<code>graph_lot.py:141</code>)</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>risolto</code></td>
+<td><code>resolve</code> (<code>:228</code>)</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>scritto</code></td>
+<td><code>write</code> (<code>:286</code>)</td>
+<td>sì</td>
+</tr>
+<tr>
+<td><code>in curatela</code></td>
+<td>inizio di <code>curate</code> (<code>:307</code>)</td>
+<td>sì</td>
+</tr>
+<tr>
+<td><code>da leggere</code></td>
+<td><code>curate</code> fermo per la lettura delle unioni (<code>:329</code>)</td>
+<td>sì</td>
+</tr>
+<tr>
+<td><code>curato</code></td>
+<td>fine di <code>curate</code> (<code>:336</code>)</td>
+<td>sì</td>
+</tr>
+<tr>
+<td><code>rimosso</code></td>
+<td><code>remove</code> (<code>:440</code>)</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<p>Gli stati "nel grafo" sono <code>scritto</code>, <code>in curatela</code>, <code>da leggere</code>, <code>curato</code>
+(<code>graph_lot.py:146</code>).</p>
+<h3 id="1-prepare">1. <code>prepare</code><a class="headerlink" href="#1-prepare" title="Permanent link">&para;</a></h3>
+<p>Crea la cartella del lotto con (<code>lots.py:222-292</code>):</p>
+<ul>
+<li><code>registro_lotto.csv</code>: le sole righe del registro dei documenti del lotto;</li>
+<li><code>config.yaml</code>: la configurazione della pipeline (<code>--base-config</code>, default
+  <code>kg_pipeline/config.yaml</code>) con i percorsi del lotto;</li>
+<li><code>estrazione.env</code>: indirizzo e nome dell'estrattore, e l'indirizzo finto del grafo;</li>
+<li><code>lotto.json</code>: documenti, grafo di destinazione, modello di estrazione, data.</li>
+</ul>
+<p>Rifiuta (<code>lots.py:144-179, 260-264</code>): nome del lotto con caratteri fuori da
+<code>A-Za-z0-9_-</code>; un lotto con lo stesso nome; un documento che non è nel registro, è escluso,
+ha <code>livello</code> 2 nel registro, è già in un altro lotto non rimosso per lo stesso grafo, o
+compare due volte.</p>
+<p>Il grafo si scrive come <code>--graph &lt;bolt URI&gt;</code> e <code>--database</code> (default <code>neo4j</code>);
+<code>localhost</code>, <code>127.0.0.1</code> e <code>[::1]</code> contano come lo stesso indirizzo (<code>lots.py:132-137</code>).</p>
+<p><code>--llm-model</code> deve essere il modello con cui il grafo è stato estratto (aiuto
+dell'opzione, <code>graph_lot.py:466-467</code>).</p>
+<h3 id="2-extract">2. <code>extract</code><a class="headerlink" href="#2-extract" title="Permanent link">&para;</a></h3>
+<p>Lancia gli stadi 0-3 della pipeline sui documenti del lotto
+(<code>kg_pipeline.main --stage llm</code>, con <code>PYTHONHASHSEED</code> dal <code>seed</code> della configurazione,
+<code>lots.py:295-323</code>). Serve l'estrattore acceso (vedi <a href="../02_serve_models/">Servire i modelli</a>).
+Lo stadio 3 salva un checkpoint ogni poche decine di frammenti: lo stesso comando riprende
+un'estrazione interrotta (<code>lots.py:298-299</code>).</p>
+<h3 id="3-resolve">3. <code>resolve</code><a class="headerlink" href="#3-resolve" title="Permanent link">&para;</a></h3>
+<ol>
+<li>stadio 4 sui soli dati del lotto, poi un secondo giudizio delle unioni con
+   <code>scripts/kg/curation/rejudge_merges.py</code>, poi di nuovo stadi 4-5 con le sole unioni
+   confermate (<code>graph_lot.py:183-198</code>). Il secondo giudizio si considera fatto quando
+   esiste il file <code>rigiudizio_fatto</code>;</li>
+<li>confronto delle entità del lotto con i nodi del grafo (<code>graph_lot.py:200-212</code>):</li>
+<li><strong>per nome</strong>: stesso nome o alias, con le stesse regole dello stadio 4 (sigle espanse,
+     accenti tolti, solo lettere e cifre) (<code>lots.py:400-459</code>);</li>
+<li><strong>per somiglianza</strong>: i 10 nodi più vicini nello spazio dei vettori dei nomi, sopra
+     <code>similarity_threshold</code> (0.88, <code>config.yaml:68</code>) se l'etichetta è la stessa, sopra
+     <code>max(soglia, 0.92)</code> se è diversa, numeri uguali se entrambi i nomi ne contengono
+     (<code>lots.py:514-569</code>); ogni coppia passa poi dal giudice, e i verdetti restano in
+     <code>giudizi_grafo.json</code> (<code>lots.py:575-611</code>);</li>
+<li>i nodi <code>DataValue</code> (numeri) non vengono mai confrontati (<code>lots.py:378-381</code>).</li>
+</ol>
+<p>Scrive <code>corrispondenze.json</code> e stampa quante entità sono uguali a un nodo, quante
+candidate, quante confermate, quante nuove (<code>graph_lot.py:222-227</code>). Rifiuta se il lotto è
+già nel grafo (<code>:176-177</code>).</p>
+<p><strong>Escludere una corrispondenza sbagliata</strong>: scrivere nella cartella del lotto
+<code>corrispondenze_escluse.json</code> con <code>{"escluse": [&lt;nome entità del lotto&gt;, ...]}</code>. Si
+possono escludere solo le corrispondenze trovate dal giudice (<code>"come": "giudice"</code>), non
+quelle per nome (<code>graph_lot.py:232-256</code>). Le entità escluse entrano come nodi nuovi.</p>
+<h3 id="4-write">4. <code>write</code><a class="headerlink" href="#4-write" title="Permanent link">&para;</a></h3>
+<ol>
+<li>rifiuta se lo stato non è <code>risolto</code>, <code>scritto</code> o <code>rimosso</code>, o se un documento del lotto
+   è già in un altro lotto dello stesso grafo (<code>graph_lot.py:267-271</code>);</li>
+<li><strong>backup</strong> del grafo in <code>&lt;lotto&gt;/backup_prima/</code> con <code>scripts/kg/kg_backup.py</code>, solo se
+   non c'è già (<code>:272-274</code>);</li>
+<li>controlla che ogni nodo trovato da <code>resolve</code> sia ancora lo stesso (stesso identificativo,
+   nome ed etichetta): dopo un ripristino del grafo gli identificativi cambiano, e in quel
+   caso si ferma e chiede di rifare <code>resolve</code> (<code>lots.py:734-758, 807-812</code>);</li>
+<li>salva nome e alias dei nodi che cambieranno in <code>scrittura.json</code>, poi scrive nodi, alias
+   e archi con <code>MERGE</code> sul nome del lotto: rilanciato dopo un'interruzione non duplica
+   (<code>lots.py:774-889</code>).</li>
+</ol>
+<h3 id="5-curate">5. <code>curate</code><a class="headerlink" href="#5-curate" title="Permanent link">&para;</a></h3>
+<p>Rifiuta se il lotto non è nel grafo, o se un lotto scritto dopo è ancora nel grafo
+(<code>graph_lot.py:297-302</code>). Poi:</p>
+<ol>
+<li>regole sugli archi (<code>edge_rules.py</code>) e cancellazione dei nodi anaforici
+   (<code>drop_nodes.py --anaphoric</code>), una volta sola: il file <code>regole_archi_fatte</code> lo
+   registra (<code>:308-313</code>);</li>
+<li><strong>unioni proposte</strong>: coppie di nodi con nomi di significato uguale (tipicamente un nome
+   italiano e uno inglese), con almeno un nodo del lotto, coseno ≥ 0,86, nodo del lotto con
+   almeno 2 archi, approvate dal giudice; esclusi <code>Person</code>, <code>Document</code>, <code>DataValue</code>
+   (<code>lots.py:957-1067</code>). Il centro dell'unione, quando c'è, è il nodo fuori dal lotto, così
+   il lotto si può ancora togliere. Finiscono in <code>unioni_proposte.json</code>;</li>
+<li><strong>si ferma</strong> con codice di uscita <strong>2</strong> e stato <code>da leggere</code> finché non esiste
+   <code>unioni_escluse.json</code> (<code>:325-330</code>). Si leggono le unioni proposte e si scrivono quelle
+   sbagliate:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">"escluse"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nt">"unito"</span><span class="p">:</span><span class="w"> </span><span class="s2">"THE BIOECONOMY"</span><span class="p">,</span><span class="w"> </span><span class="nt">"centro"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bioeconomia"</span><span class="p">}]}</span>
+</code></pre></div>
+<p>Il file va scritto anche se non c'è niente da escludere (<code>{"escluse": []}</code>);
+4. rilanciato, applica le unioni non escluse (<code>lots.py:1070-1132</code>), poi cancella i nodi
+   rimasti senza archi (<code>drop_nodes.py --isolated</code>) (<code>graph_lot.py:331-336</code>).</p>
+<h3 id="6-index">6. <code>index</code><a class="headerlink" href="#6-index" title="Permanent link">&para;</a></h3>
+<p>Aggiorna gli indici dopo <code>write</code>, <code>curate</code> o <code>remove</code> (<code>graph_lot.py:358-371</code>):</p>
+<ol>
+<li><code>kg_search_index.py</code> (testo di ricerca dei nodi);</li>
+<li><code>kg_vector_index.py --only-missing</code> (vettori dei soli nodi senza <code>:NodeVec</code>); si ferma
+   se l'encoder su <code>:8002</code> non risponde (<code>kg_vector_index.py:186-192</code>);</li>
+<li><code>check_vector_index.py --min-resolving 1</code>.</li>
+</ol>
+<h3 id="7-check">7. <code>check</code><a class="headerlink" href="#7-check" title="Permanent link">&para;</a></h3>
+<p>Confronta il grafo con lo stato di prima del lotto (<code>graph_lot.py:374-407</code>) e scrive
+<code>controllo.json</code>. Segnala un problema, ed esce con 1, se: i nodi o gli archi che non sono
+di nessun lotto sono cambiati di numero; un nodo del grafo che ha ricevuto alias ha cambiato
+nome o non c'è più; non tutti gli archi del piano sono stati scritti; ci sono nodi senza
+vettore.</p>
+<h3 id="togliere-un-lotto-remove">Togliere un lotto: <code>remove</code><a class="headerlink" href="#togliere-un-lotto-remove" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>scripts/kg/graph_lot.py<span class="w"> </span>remove<span class="w"> </span>--lot<span class="w"> </span>&lt;lotto&gt;<span class="w"> </span>--neo4j-env<span class="w"> </span>&lt;file&gt;
+</code></pre></div>
+<p>Toglie gli archi del lotto, i nodi creati dal lotto che non hanno più archi, e rimette gli
+alias salvati, solo sui nodi che hanno ancora lo stesso nome (<code>lots.py:892-950</code>). Un nodo
+del lotto collegato da un lotto successivo resta, e viene elencato. Poi sposta in
+<code>&lt;lotto&gt;/rimozione_&lt;data&gt;/</code> i file di scrittura e curatela, mette lo stato <code>rimosso</code> e
+aggiorna gli indici (<code>graph_lot.py:430-442</code>).</p>
+<p>I lotti di uno stesso grafo si tolgono <strong>in ordine inverso</strong> di scrittura: <code>remove</code>
+rifiuta se un lotto scritto dopo è ancora nel grafo, salvo <code>--force</code> (<code>:425-427</code>).</p>
+<h2 id="le-protezioni-sul-grafo-di-destinazione">Le protezioni sul grafo di destinazione<a class="headerlink" href="#le-protezioni-sul-grafo-di-destinazione" title="Permanent link">&para;</a></h2>
+<p>Ogni passo con <code>--neo4j-env</code> controlla (<code>graph_lot.py:72-100</code>):</p>
+<ul>
+<li>che il file punti al grafo per cui il lotto è stato preparato; altrimenti si ferma con
+  <code>il lotto è per &lt;grafo&gt;, --neo4j-env punta a &lt;uri&gt;</code>;</li>
+<li>che il grafo sia locale; un grafo remoto richiede <code>--allow-remote</code>;</li>
+<li>che non sia la porta 7689 (lo staging); richiede <code>--allow-staging</code>.</li>
+</ul>
+<p>I comandi lanciati dai passi ricevono tutte le varianti delle variabili (<code>NEO4J_URI</code>,
+<code>NEO4J_URL</code>, <code>NEO4J_USER</code>, <code>NEO4J_USERNAME</code>, …) con i valori del file, così nessuno script
+ricade su un default che indica un altro grafo (<code>:87-99</code>).</p>
+<h2 id="se-qualcosa-va-storto">Se qualcosa va storto<a class="headerlink" href="#se-qualcosa-va-storto" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>sintomo</th>
+<th>causa</th>
+<th>rimedio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>il lotto &lt;nome&gt; non esiste in …</code></td>
+<td>nome sbagliato o <code>--lots-dir</code> diverso</td>
+<td><code>graph_lot.py status</code></td>
+</tr>
+<tr>
+<td><code>lotto non valido: …</code> a <code>prepare</code></td>
+<td>documento non nel registro, escluso, a livello 2, già in un lotto, ripetuto</td>
+<td>correggere <code>--docs</code> o il registro</td>
+</tr>
+<tr>
+<td><code>il lotto è per …, --neo4j-env punta a …</code></td>
+<td>file del grafo sbagliato</td>
+<td>usare il file del grafo scritto a <code>prepare</code></td>
+</tr>
+<tr>
+<td><code>… non è locale (il grafo ospitato?): serve --allow-remote</code></td>
+<td>il file punta a un grafo remoto</td>
+<td>aggiungere <code>--allow-remote</code> solo se è voluto</td>
+</tr>
+<tr>
+<td><code>7689 è lo staging di riferimento: serve --allow-staging</code></td>
+<td>il file punta allo staging</td>
+<td>come sopra, con <code>--allow-staging</code></td>
+</tr>
+<tr>
+<td><code>il lotto è &lt;stato&gt;, quindi nel grafo: toglierlo con remove prima di rifare resolve</code></td>
+<td><code>resolve</code> su un lotto già scritto</td>
+<td><code>remove</code>, poi <code>resolve</code></td>
+</tr>
+<tr>
+<td><code>N nodi del grafo non sono più quelli trovati da resolve (il grafo è stato ricaricato?)</code></td>
+<td>il grafo è stato ripristinato dopo <code>resolve</code></td>
+<td>rilanciare <code>resolve</code></td>
+</tr>
+<tr>
+<td><code>curate</code> esce con codice 2</td>
+<td>manca <code>unioni_escluse.json</code></td>
+<td>leggere <code>unioni_proposte.json</code>, scrivere il file, rilanciare</td>
+</tr>
+<tr>
+<td><code>lotti scritti dopo questo sono nel grafo</code></td>
+<td><code>curate</code> o <code>remove</code> su un lotto non ultimo</td>
+<td>togliere prima i lotti successivi (o <code>remove --force</code>)</td>
+</tr>
+<tr>
+<td><code>embedding endpoint non raggiungibile</code> a <code>index</code></td>
+<td>encoder spento</td>
+<td>accendere l'encoder su <code>:8002</code> (<a href="../02_serve_models/">Servire i modelli</a>)</td>
+</tr>
+<tr>
+<td><code>passo fallito (&lt;codice&gt;): …</code></td>
+<td>uno degli script lanciati dal passo è uscito con errore</td>
+<td>leggere l'output sopra la riga</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Piede" >
+        
+          
+          <a href="../10_corpus_update/" class="md-footer__link md-footer__link--prev" aria-label="Precedente: Aggiornare i documenti della demo">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Precedente
+              </span>
+              <div class="md-ellipsis">
+                Aggiornare i documenti della demo
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../12_kg_rebuild/" class="md-footer__link md-footer__link--next" aria-label="Successivo: Ricostruire il grafo">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Successivo
+              </span>
+              <div class="md-ellipsis">
+                Ricostruire il grafo
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,9 @@
+/* Page status icons in the navigation (front matter `status:`). Generated from Material's bundled icons. */
+:root {
+  --md-status--todo: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M19%2019V5H5v14zm0-16a2%202%200%200%201%202%202v14a2%202%200%200%201-2%202H5a2%202%200%200%201-2-2V5a2%202%200%200%201%202-2zm-2.3%206.35-1%201-2.05-2.05%201-1c.21-.22.56-.22.77%200l1.28%201.28c.22.21.22.56%200%20.77M7%2014.94l6.06-6.06%202.06%202.06L9.06%2017H7z%22/%3E%3C/svg%3E');
+  --md-status--draft: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M10%2020H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1%200-2%20.9-2%202v16c0%201.1.9%202%202%202h4zm10.2-7c.1%200%20.3.1.4.2l1.3%201.3c.2.2.2.6%200%20.8l-1%201-2.1-2.1%201-1c.1-.1.2-.2.4-.2m0%203.9L14.1%2023H12v-2.1l6.1-6.1z%22/%3E%3C/svg%3E');
+  --md-status--verified: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22m23%2012-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12%203%208.6%201.54%206.71%204.72l-3.61.81.34%203.68L1%2012l2.44%202.78-.34%203.69%203.61.82%201.89%203.18L12%2021l3.4%201.46%201.89-3.18%203.61-.82-.34-3.68zm-13%205-4-4%201.41-1.41L10%2014.17l6.59-6.59L18%209z%22/%3E%3C/svg%3E');
+}
+.md-status--todo::after { -webkit-mask-image: var(--md-status--todo); mask-image: var(--md-status--todo); background-color: var(--md-default-fg-color--lighter); }
+.md-status--draft::after { -webkit-mask-image: var(--md-status--draft); mask-image: var(--md-status--draft); background-color: #ef6c00; }
+.md-status--verified::after { -webkit-mask-image: var(--md-status--verified); mask-image: var(--md-status--verified); background-color: #2e7d32; }

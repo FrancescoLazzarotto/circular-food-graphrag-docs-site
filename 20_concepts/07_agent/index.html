@@ -1,0 +1,3401 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../06_retrieval/">
+      
+      
+        <link rel="next" href="../08_evaluation/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>L'agente - circular-food-graphrag — documentazione</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../assets/status.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lagente" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../.." title="circular-food-graphrag — documentazione" class="md-header__button md-logo" aria-label="circular-food-graphrag — documentazione" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            circular-food-graphrag — documentazione
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              L'agente
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Tema scuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Tema scuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Tema chiaro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Tema chiaro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../00_start/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Inizia qui
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../10_guides/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Guide pratiche
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Come funziona
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../40_operations/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Server e servizi
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../50_handover/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Consegne
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../90_meta/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Sulla documentazione
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="circular-food-graphrag — documentazione" class="md-nav__button md-logo" aria-label="circular-food-graphrag — documentazione" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    circular-food-graphrag — documentazione
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../00_start/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inizia qui
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Inizia qui
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_start/01_repo_tour/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Giro della repo
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_start/02_house_rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPU, porte e dischi
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_start/03_access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accesso al server
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_start/04_environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ambiente Python
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_start/05_first_day/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Il primo giorno
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_start/06_glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossario
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../10_guides/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide pratiche
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guide pratiche
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10_guides/01_demo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Avviare e fermare la demo
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10_guides/02_serve_models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Servire i modelli
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10_guides/03_ask_question/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fare una domanda dal terminale
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10_guides/04_run_campaign/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lanciare una campagna
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10_guides/05_retrieval_matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matrice di retrieval
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10_guides/06_question_suite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generare una suite di domande
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10_guides/07_analyse_run/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analizzare un run
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10_guides/08_score_run/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Valutare un run
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10_guides/09_production_graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Il grafo di produzione
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10_guides/10_corpus_update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aggiornare i documenti della demo
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10_guides/11_graph_lots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aggiungere documenti al grafo (lotti)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10_guides/12_kg_rebuild/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ricostruire il grafo
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10_guides/13_code_changes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modificare il codice
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10_guides/14_cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Il cluster (non più usato)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10_guides/15_end_to_end/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Percorsi completi
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Come funziona
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Come funziona
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architettura
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_data_flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso dei dati
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_corpus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Il corpus
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_kg_pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Come si costruisce il grafo
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_graph_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modello del grafo
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_retrieval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Retrieval e strategie
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L'agente
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L'agente
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#il-percorso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Il percorso
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ontologia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L'ontologia dei quadri
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saluti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Saluti e domande sull'assistente
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filtro-dominio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Il filtro di dominio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recupero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recupero, prove e contesto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#il-giudizio-di-pertinenza" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Il giudizio di pertinenza
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La generazione
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-memoria-della-conversazione-solo-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La memoria della conversazione (solo demo)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cosa-restituisce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cosa restituisce
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Valutazione
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_measured_negatives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Già provato, non funziona
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../40_operations/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Server e servizi
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Server e servizi
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../40_operations/01_server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    La macchina
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../40_operations/02_services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Servizi e timer
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../40_operations/03_ports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Porte
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../40_operations/04_data_locations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dove stanno i dati
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../40_operations/05_backups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup e ripristino
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../40_operations/06_troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problemi noti e soluzioni
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../50_handover/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Consegne
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Consegne
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../50_handover/01_project_state/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stato del progetto
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../50_handover/02_open_issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Questioni aperte
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../50_handover/03_known_traps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trappole note
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../50_handover/04_contacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dove stanno le credenziali
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../90_meta/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sulla documentazione
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sulla documentazione
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../90_meta/conventions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regole di scrittura
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../90_meta/status/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stato della documentazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inventory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Inventory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../90_meta/inventory/env_vars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environment variables read in code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../90_meta/inventory/python_modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python modules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../90_meta/inventory/untracked_and_external/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Untracked and external locations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#il-percorso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Il percorso
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ontologia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L'ontologia dei quadri
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saluti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Saluti e domande sull'assistente
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filtro-dominio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Il filtro di dominio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recupero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recupero, prove e contesto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#il-giudizio-di-pertinenza" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Il giudizio di pertinenza
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La generazione
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-memoria-della-conversazione-solo-demo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La memoria della conversazione (solo demo)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cosa-restituisce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cosa restituisce
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="lagente">L'agente<a class="headerlink" href="#lagente" title="Permanent link">&para;</a></h1>
+<p><code>KGRAGAgent</code> (<code>core.py:422</code>) porta una domanda fino alla risposta citata con un grafo
+LangGraph. Un'istanza serve tutte le sessioni della demo: lo stato di ogni turno sta nel
+grafo o in variabili per thread (<code>:425-426, 450-462</code>).</p>
+<h2 id="il-percorso">Il percorso<a class="headerlink" href="#il-percorso" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>flowchart LR
+  START((inizio)) --&gt; scope
+  scope --&gt;|fuori dominio o saluto| refuse --&gt; FINE((fine))
+  scope --&gt;|in dominio| decompose --&gt; route
+  route --&gt; retrieve
+  route -.-&gt;|solo con l'ontologia| ontology -.-&gt; retrieve
+  retrieve --&gt; grade
+  grade --&gt;|pertinente, o 3 riscritture| generate
+  grade --&gt;|non pertinente| rewrite --&gt; retrieve
+  generate --&gt; FINE
+  generate -.-&gt;|solo con l'ontologia| verify -.-&gt; FINE</code></pre>
+<p>Cablaggio in <code>_build_graph</code> (<code>core.py:507-559</code>). I due nodi tratteggiati, <code>ontology</code> e
+<code>verify</code>, esistono solo se l'agente ha caricato l'ontologia (<code>:519-523, 536-540, 553-557</code>):
+senza, il grafo dell'agente è identico, nodo per nodo (commento a <code>:519-520</code>).</p>
+<table>
+<thead>
+<tr>
+<th>nodo</th>
+<th>cosa fa</th>
+<th>acceso da</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>scope</code></td>
+<td>prima: una domanda che nomina un framework dell'ontologia passa (<code>:656-662</code>); poi saluti e domande sull'assistente, dove una lettera maiuscola contata o numerata conta come soggetto (<a href="#saluti">sotto</a>); poi il filtro di dominio (<code>:628-718</code>)</td>
+<td><code>answer_meta_questions</code>, <code>enable_domain_gate</code></td>
+</tr>
+<tr>
+<td><code>refuse</code></td>
+<td>risposta fissa: presentazione dell'assistente, o rifiuto che dice cosa copre la collezione (<code>:967-1020</code>)</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>decompose</code></td>
+<td>divide la domanda in sotto-domande con il modello (<code>:1022-1073</code>)</td>
+<td><code>enable_decomposition_step</code> (spento di default, <code>config.py:67</code>)</td>
+</tr>
+<tr>
+<td><code>route</code></td>
+<td>sceglie il modo: <code>TEXT</code>, <code>KG</code>, <code>HYBRID</code>, <code>MULTIHOP</code> (<code>:1124-1152</code>); spento = <code>HYBRID</code></td>
+<td><code>enable_adaptive_routing_step</code> (spento di default, <code>config.py:68</code>)</td>
+</tr>
+<tr>
+<td><code>ontology</code></td>
+<td>cerca nell'ontologia dei quadri i framework, le versioni e i concetti che la domanda nomina (<code>:561-591</code>); vedi <a href="#ontologia">L'ontologia dei quadri</a></td>
+<td><code>enable_ontology</code> (spento nella libreria, <code>config.py:274</code>; <code>DEMO_ONTOLOGY</code>, acceso di default nella demo, <code>product/config.py:190</code>)</td>
+</tr>
+<tr>
+<td><code>retrieve</code></td>
+<td>recupero, prove numerate, compressione, cache (<code>:1154-1417</code>)</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>grade</code></td>
+<td>le prove contengono i termini della domanda? (<code>:1599-1681</code>)</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>rewrite</code></td>
+<td>il modello riscrive la domanda per un altro giro di recupero (<code>:1075-1122</code>)</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>generate</code></td>
+<td>risposta del modello, controlli, elenco delle fonti (<code>:1780-2010</code>)</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>verify</code></td>
+<td>confronta le liste di framework della risposta con l'ontologia e, se differiscono, aggiunge una nota fissa (<code>:593-626</code>)</td>
+<td><code>enable_ontology</code>, come <code>ontology</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="ontologia">L'ontologia dei quadri<a class="headerlink" href="#ontologia" title="Permanent link">&para;</a></h2>
+<p>L'ontologia dei quadri (le 3C, le strategie R e le loro versioni; vedi il <a href="../../00_start/06_glossary/#ontologia-quadri">Glossario</a>) è il file
+<code>ontology/build/ontology.json</code>, costruito fuori linea e mai caricato in Neo4j; il pacchetto
+<code>graphrag.ontology</code> lo legge in memoria (<code>ontology/__init__.py:1-7</code>). Il percorso è
+<code>GRAPHRAG_ONTOLOGY_JSON</code> oppure <code>ontology/build/ontology.json</code> della repo
+(<code>ontology/consult.py:19, 186-199</code>). Ogni voce porta documento e pagina da cui viene.</p>
+<p><strong>Quando è accesa.</strong> Alla costruzione l'agente carica l'ontologia solo se
+<code>config.enable_ontology</code> è vero (<code>core.py:464-471</code>). Se il file non c'è, il caricamento
+solleva <code>OntologyNotBuilt</code>: l'agente scrive un avviso nel log, resta senza ontologia e il
+percorso di risposta funziona come con l'interruttore spento (<code>:468-471</code>). Nella demo
+l'interruttore è <code>DEMO_ONTOLOGY</code> (default <code>1</code>; <code>0</code> con <code>DEMO_PROFILE=prima</code>, perché il default
+segue il profilo, <code>product/config.py:66, 190</code>; il profilo <code>DEMO</code> di <code>graphrag.profiles</code> porta
+<code>enable_ontology: True</code> per restare uguale alla demo, <code>profiles.py:84</code>); con
+<code>DEMO_ONTOLOGY_SWITCH</code> acceso (default <code>1</code>, <code>0</code> con <code>DEMO_PROFILE=prima</code>, <code>:192</code>) il lettore
+la accende o la spegne dalle impostazioni avanzate, e l'interfaccia costruisce un agente
+nuovo (<code>build_ontology_agent</code>, <code>product/config.py:738-759</code>) quando la scelta è diversa da
+<code>DEMO_ONTOLOGY</code> (<code>product/app.py:678-679</code>). Nel CLI e nelle campagne vale il valore di
+<code>AgentConfig.enable_ontology</code>, <code>False</code> di default (<code>config.py:274</code>). Il messaggio del commit
+<code>aa92a4d</code>, che l'ha accesa di default, riporta il confronto alla cieca su 90 domande fisse,
+giudicato da un modello di un'altra famiglia in entrambi gli ordini: sulle 78 domande sui quadri
+le risposte con l'ontologia ne vincono 44 e ne perdono 8 (26 pari), senza più voci della versione
+sbagliata (1 contro 2) e senza perdere nessuna delle 12 domande di controllo.</p>
+<p><strong>Prima del recupero</strong> (<code>_consult_ontology</code>, <code>core.py:561-591</code>) senza chiamare il modello:</p>
+<ol>
+<li>legge la domanda già resa autonoma dalla memoria (<code>resolved_question</code>) se c'è, altrimenti
+   quella digitata (<code>:576</code>): una continuazione come "e la coevoluzione?" da sola non nomina
+   niente;</li>
+<li><code>ontology_hooks.consult</code> riconosce con regole sulle parole (n-grammi fino a 6 parole,
+   <code>hooks.py:23, 66-137</code>) i framework, le versioni, i concetti e i casi nominati. Una parola sola
+   conta solo accanto al nome del framework, salvo i nomi specifici: conta il nome come è scritto nella domanda,
+   non le etichette del concetto: più di una parola, oppure, per una delle 3C, più di 8 lettere
+   (<code>_specific</code>, <code>hooks.py:159-179</code>). Le lettere doppie sono ortografia, non
+   una parola diversa ("eRRRando", <code>_squeeze</code>, <code>hooks.py:139-141</code>);</li>
+<li>dà al più 5 voci (<code>hooks.py:25, 215</code>): un caso, un'eventuale regola di precedenza fra due
+   concetti, una voce per ogni versione del framework, una con le differenze fra versioni, una per
+   concetto (<code>hooks.py:182-215</code>). Ogni voce è fatta come un passo di testo, con <code>content</code>,
+   <code>source</code>, <code>chunk_id</code>;</li>
+<li>mette in stato <code>ontology_evidence</code> e <code>ontology_match</code> (<code>core.py:583-591</code>).</li>
+</ol>
+<p>In <code>_retrieve</code> le voci vanno <strong>in testa</strong> ai passi di testo, perché la compressione tiene l'inizio
+del contesto (<code>:1346-1358</code>). Con <code>cite_evidence</code> entrano nell'elenco delle prove numerate con
+documento e pagina come gli altri passi (<code>ontology/hooks.py:1-8</code>); senza, vengono premesse al contesto in blocchi
+<code>&lt;fonte&gt;</code> (<code>:1354-1358</code>).</p>
+<p><strong>Nel filtro di dominio</strong>: se l'ontologia è caricata e la domanda (nella forma del filtro,
+<code>_gate_question</code>) nomina un framework, la domanda è in dominio e il filtro non gira
+(<code>:656-662</code>); vale anche con il filtro di dominio spento, e viene prima delle risposte alle
+domande sull'assistente.</p>
+<p><strong>Dopo la generazione</strong> (<code>_verify_against_ontology</code>, <code>core.py:593-626</code>), di nuovo senza
+modello: se la domanda nominava un framework e non è stata rifiutata, <code>check_answer</code>
+(<code>hooks.py:439-519</code>) confronta le liste della risposta con la versione dichiarata (o la più
+vicina, se nessuna è nominata). Che cosa è una lista (<code>list_items</code>, <code>hooks.py:383-430</code>): righe
+con elenco puntato o numerato, oppure una frase o una parentesi di almeno tre voci separate da
+virgole, di al più 5 parole ciascuna (<code>_MAX_ITEM_WORDS</code>, <code>:39</code>). Prima del conteggio si tolgono le
+citazioni fra parentesi quadre ("[REPORT MATTM, p. 70]", <code>_CITATION</code>, <code>:34</code>) e la posizione dopo
+il nome ("rifiutare (R0)", <code>_TRAILING_CODE</code>, <code>:37</code>). Una lista di frase introdotta da "come", "tra
+cui", "ad esempio", "such as" dà esempi e non si giudica (<code>_EXAMPLES</code>, <code>:42</code>).</p>
+<p>Si giudica solo una lista di cui almeno metà delle voci e almeno due sono membri di una
+versione (<code>hooks.py:468</code>). Non si giudica: un tratto continuo di una scala senza famiglie, e una
+lista che contiene meno della metà della versione (<code>_is_stretch</code>, <code>_is_sample</code>, <code>:479, 569-582</code>);
+una lista tutta di una sola famiglia si confronta con quella famiglia, ma solo se la risposta
+nomina la famiglia, altrimenti sono esempi (<code>:475-478</code>). Un nome sconosciuto all'ontologia che
+sta esattamente nel posto di un solo membro mancante (per esempio "R5 Renew" nella scala di
+Potting, in inglese) non è un errore (<code>_renamed</code>, <code>:484-490, 530-566</code>); un nome che l'ontologia conosce
+(un membro di un'altra versione) resta un errore. Se nessuna versione è nominata e due versioni
+corrispondono alla lista allo stesso modo (<code>_tied</code>, <code>:521-527</code>), e la lista contiene nomi che
+l'ontologia non conosce, la lista non si giudica: la nota potrebbe nominare la versione sbagliata
+(<code>:491-497</code>). Se la lista differisce, <code>check_note</code> (<code>hooks.py:594-612</code>) produce una nota fissa
+nella lingua della risposta che dice cosa manca e cosa è in più, e <code>_verify</code> la accoda alla
+risposta (<code>core.py:615-626</code>). Il risultato del confronto sta in <code>ontology_check</code>.</p>
+<p>Misure riportate nei messaggi dei commit: su un banco di 67 risposte nei formati della demo (34 con un errore inserito) il controllo trova gli errori 13 volte su 34 prima della revisione delle regole sugli elenchi e 31 dopo, con falsi allarmi da 7 a 0 su 33 (commit <code>b87c822</code>); con i nomi inglesi delle strategie R gli errori trovati sono 34 su 34 e i falsi allarmi restano 0 su 33 (<code>2041d93</code>, <code>3bb6766</code>); <code>scripts/analysis/verify_bench.py</code> stampa i conteggi.</p>
+<h2 id="saluti">Saluti e domande sull'assistente<a class="headerlink" href="#saluti" title="Permanent link">&para;</a></h2>
+<p>Con <code>answer_meta_questions</code> (<code>DEMO_META_REPLY</code>, default <code>1</code>) un saluto o una domanda
+sull'assistente ricevono la presentazione, senza recupero (<code>core.py:668-691</code>). Sul primo turno
+vale anche la regola opposta: una domanda che dopo aver tolto le parole di riempimento non ha
+niente da cercare riceve la presentazione (<code>has_searchable_subject</code>, <code>core.py:682</code>;
+<code>smalltalk.py:159-187</code>). Una lettera maiuscola contata o numerata è un soggetto, non un saluto:
+"le 3 C", "le tre C", "the 3 Cs", "la [R+]", "la R4" (<code>_NAMED_CODE</code>, <code>smalltalk.py:149-156</code>,
+usato a <code>:187</code>); ogni pezzo da solo è sotto il minimo di quattro lettere e una lettera sola non
+è una sigla. Gli esempi sono quelli del messaggio del commit <code>8d82c8c</code>, che riporta anche la
+misura: su 203 domande distinte, registrate e di prova, ne cambiano esattamente tre, tutte di
+questo tipo, e i saluti ricevono ancora la presentazione.</p>
+<h2 id="filtro-dominio">Il filtro di dominio<a class="headerlink" href="#filtro-dominio" title="Permanent link">&para;</a></h2>
+<p>Due modi, scelti da <code>GRAPHRAG_GATE_MODE</code> (<code>_gate_mode</code>, <code>:264-275</code>):</p>
+<ul>
+<li><strong><code>evidence</code></strong> (default): il modello giudica la domanda guardando cosa restituisce la
+  collezione: fino a 8 nomi di nodi, i primi 3 passi di testo (200 caratteri ciascuno) e i
+  nomi dei documenti (<code>_evidence_gate</code>, <code>:732-855</code>; costanti <code>:199, 202, 205</code>). Una domanda senza
+  termini di ricerca propri (una continuazione come «in che senso?») passa (<code>:770-771</code>). Una
+  domanda che nomina solo una voce del grafo passa senza chiedere al modello (<code>:797-803</code>). Se il
+  recupero non funziona, la domanda passa: un filtro che fallisce non deve rifiutare
+  (<code>:772-773, 780-786, 839-840</code>).</li>
+<li><strong><code>scope</code></strong>: il modello giudica la domanda contro una descrizione del dominio, con i nomi
+  del grafo che compaiono nella domanda come suggerimento; le domande di 3 parole o meno
+  passano (<code>:701-717</code>).</li>
+</ul>
+<p><strong>Passi del termine definito.</strong> Con <code>gate_term_passages</code> (spento nella libreria, <code>config.py:257</code>;
+<code>DEMO_GATE_TERM_PASSAGES</code>, default <code>1</code>, <code>product/config.py:172</code>) il filtro <code>evidence</code> mostra
+al modello, prima dei passi ordinati per somiglianza, i passi che usano parola per parola il
+termine su cui la domanda chiede una definizione ("Cos'è la sbramatura?"): una parola rara è
+quella che la classifica per somiglianza piazza peggio. Ne entrano al più 1 su 3
+(<code>_MAX_GATE_PASSAGES // 2</code>), cercati con <code>_term_passages</code> (<code>:404-419</code>, <code>:815-822</code>). Sono un
+elemento da leggere, non un verdetto: una parola che compare nei documenti non è per forza
+l'argomento dei documenti (docstring di <code>_term_passages</code>).</p>
+<p><strong>Il perimetro dichiarato.</strong> Con <code>gate_perimeter</code> non vuoto (vuoto nella libreria,
+<code>config.py:258-263</code>) il filtro <code>evidence</code> riceve in coda al prompt i campi su cui l'assistente
+risponde, dichiarati dal suo responsabile: una domanda in quei campi è in dominio anche se i
+documenti non la coprono (la risposta dirà allora che cosa manca ai documenti), e il filtro
+rifiuta solo ciò che è fuori dai campi e di cui nemmeno il materiale parla (programmazione,
+matematica, geografia, sport, curiosità generali). Senza perimetro il prompt non cambia e il
+classificatore è chiamato senza l'argomento <code>perimeter</code> (<code>core.py:842-846</code>;
+<code>LLMManager.classify_answerable</code>, <code>llm/manager.py:587, 599-606</code>; <code>evidence_gate_prompt</code>,
+<code>llm/prompts.py:687, 709, 769-790</code>). Nella demo è <code>DEMO_GATE_PERIMETER</code>
+(<code>product/config.py:173-184</code>), con il testo predefinito «food, cooking, gastronomy and
+restaurants, agriculture and food systems, sustainability and the circular economy, systems
+thinking and systemic design»; vuoto con <code>DEMO_PROFILE=prima</code> o con la variabile impostata a
+vuoto. Vale solo per il filtro <code>evidence</code>: il filtro <code>scope</code> non lo legge. I messaggi dei commit
+<code>2bbbe6c</code> e <code>548dc50</code> riportano la misura sul banco di 203 domande: fuori tema riconosciute 25 su
+27 prima, 27 su 27 con il perimetro; domande in dominio rifiutate a torto 7 su 169 prima, 3 su 169
+dopo; le sei domande di cucina tutte ammesse; stessa decisione per ogni coppia italiano/inglese;
+mediana del filtro da 0,47 s a 0,51 s. Su 225 turni reali con memoria i rifiuti passano da 43 a 31
+(giudici ciechi sui 35 turni cambiati: perimetro 15, prima 6, pari 14); un turno peggiora, un
+seguito astratto in una conversazione di pensiero sistemico. Il testo predefinito nomina anche il pensiero
+sistemico e i ristoranti; il messaggio del commit <code>548dc50</code> riporta che sul banco di 203 domande nessun verdetto cambia,
+sui 225 turni reali cambia solo quel seguito.</p>
+<p><strong>Cosa ha visto il filtro.</strong> <code>_evidence_gate</code> restituisce, oltre al verdetto, <code>gate_evidence</code>: la
+domanda giudicata, i termini, i nomi dei nodi, i passi e i documenti mostrati al modello, e
+<code>decision</code>, il percorso che ha deciso (<code>no_terms</code>, <code>no_retriever</code>, <code>lookup_failed</code>, <code>no_fulltext</code>,
+<code>bare_name</code>, <code>model</code>; <code>core.py:761-766, 771-786, 803, 853-855</code>). La chiave è nello stato
+(<code>types.py:103-107</code>) e la demo la scrive nel registro della sessione (<code>product/app.py:739-742</code>),
+perché il materiale cambia al crescere della collezione e il verdetto non si spiega dopo.</p>
+<p>Nei turni successivi al primo il filtro <code>evidence</code> giudica la domanda riscritta dalla
+memoria, non quella digitata (<code>_gate_question</code>, <code>:208-236</code>, usata a <code>:699</code>); il filtro
+<code>scope</code> giudica sempre la domanda come digitata (<code>:706-710</code>).</p>
+<h2 id="recupero">Recupero, prove e contesto<a class="headerlink" href="#recupero" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Query</strong>: la domanda (o la sua riscrittura) più le eventuali sotto-domande
+   (<code>_build_retrieval_queries</code>, <code>:1419</code>).</li>
+<li><strong>Traduzione</strong> (con <code>translate_query_for_retrieval</code>; <code>DEMO_TRANSLATE_QUERY</code>, default <code>1</code>,
+   <code>product/config.py:197</code>): una chiamata breve al modello traduce la domanda principale
+   nell'altra lingua del corpus, italiano se è inglese e viceversa (<code>_translated_query</code>,
+   <code>:857-865</code>; <code>LLMManager.translate_question</code>, <code>llm/manager.py:617-641</code>, che in caso di errore o
+   di risposta che non è una traduzione restituisce vuoto e il recupero va avanti sulla sola
+   domanda). La traduzione va solo con la domanda principale: le sotto-domande si cercano come
+   scritte (<code>_translation_kwargs</code>, <code>:867-874</code>). Dove agisce nel recupero: <a href="../06_retrieval/#testo">Retrieval e strategie</a>.</li>
+<li><strong>Recupero</strong> per ogni query con <code>KGRetriever.retrieve</code>, poi unione senza doppioni canale per
+   canale, entro i limiti della configurazione: nei modi <code>KG</code> e <code>HYBRID</code>, che è anche il
+   comportamento quando l'instradamento è spento, i cinque canali del grafo si uniscono in un
+   solo ciclo (<code>:1236-1273</code>, <code>_merge_items</code> <code>:1500-1525</code>). Nel modo <code>TEXT</code> si tiene solo il testo
+   (<code>:1213-1234</code>); nel modo <code>MULTIHOP</code> solo il sottografo delle prime 2 entità di partenza
+   (<code>:1301-1336</code>). Dettagli dei canali: <a href="../06_retrieval/">Retrieval e strategie</a>.</li>
+<li><strong>Voci dell'ontologia</strong> in testa ai passi di testo, se la domanda ne ha prodotte
+   (<code>:1346-1358</code>, vedi <a href="#ontologia">L'ontologia dei quadri</a>).</li>
+<li><strong>Prove numerate</strong> (con <code>cite_evidence</code>): passi di testo <code>S1..Sn</code>, poi triple <code>T1..Tn</code>,
+   poi le sezioni non citabili dei nodi (<code>:1360-1380</code>; <code>evidence.py:251-332, 393-445</code>).</li>
+<li><strong>Compressione</strong> al budget <code>max_content_tokens</code>: se il contesto è troppo lungo si tengono
+   inizio e fine e si toglie il centro (<code>agent/compression.py</code>).
+   Le prove rimaste visibili vengono registrate, perché il controllo delle citazioni giudichi
+   solo quelle (<code>:1382-1386</code>).</li>
+<li><strong>Cache</strong> del risultato per query e modo (<code>:1193-1196, 1414-1415</code>;
+   <code>agent/cache.py</code>). La chiave è fatta con le
+   query di recupero, il modo e, se ci sono, i documenti preferiti (<code>:1179-1191</code>); non contiene
+   la traduzione né le voci dell'ontologia.</li>
+</ol>
+<h2 id="il-giudizio-di-pertinenza">Il giudizio di pertinenza<a class="headerlink" href="#il-giudizio-di-pertinenza" title="Permanent link">&para;</a></h2>
+<p><code>_grade</code> conta le unità di prova (nodi, triple, sottografo, percorso, e il testo come
+un'unità) che contengono un termine saliente della domanda come parola intera. È pertinente
+se almeno una corrisponde e, salvo quando c'è solo testo, almeno due o il 30% (<code>:1599-1681</code>).
+Altrimenti si riscrive la domanda e si recupera di nuovo, al massimo 3 volte (<code>:543-549</code>);
+una riscrittura identica alla precedente chiude il ciclo (<code>:1111-1118</code>).</p>
+<h2 id="generazione">La generazione<a class="headerlink" href="#generazione" title="Permanent link">&para;</a></h2>
+<p><code>_generate</code> (<code>:1780-2010</code>):</p>
+<ul>
+<li><strong>nessuna prova</strong>: risposta fissa "il contesto disponibile non è sufficiente", nella lingua
+  della domanda (<code>:1818-1837</code>); non vale per la strategia <code>no_retrieval</code>, che chiede al modello
+  senza contesto (<code>:1816, 1870-1874</code>);</li>
+<li><strong>contesto scarso</strong> (al massimo 2 unità e meno di 1.600 caratteri): si aggiunge
+  un'istruzione a rispondere con quello che c'è e una sezione sui limiti (<code>:1842-1863</code>);</li>
+<li>una risposta che rifiuta, o non fondata su contesto scarso, viene sostituita da un riepilogo
+  delle prove (<code>_should_replace_with_fallback</code>, <code>:1897-1912, 2012-2060</code>);</li>
+<li><strong>con le citazioni</strong> (<code>cite_evidence</code>): i riferimenti <code>[S1]</code>/<code>[T1]</code> vengono verificati contro
+  le prove visibili (<code>verify_citations</code>); con <code>verify_quoted_passages</code> le citazioni fra
+  virgolette vengono confrontate con i passi (<code>verify_quotes</code>, <code>evidence.py:600-700</code>, chiamata a
+  <code>core.py:1936-1946</code>); con <code>prefer_verbatim_definitions</code> la risposta a
+  una domanda di definizione si apre con la frase della fonte, estratta dal codice e non
+  chiesta al modello (<code>_prepend_source_definition</code>, <code>:1683-1757</code>); in fondo l'elenco delle
+  fonti citate, con documento e pagina (<code>:1916-1994</code>);</li>
+<li><strong>senza citazioni</strong>: in fondo un blocco di verifica con le triple del grafo (<code>:1995-2006</code>).</li>
+</ul>
+<p><strong>Citazione copiata da un fatto del grafo.</strong> Un fatto del grafo è scritto da un modello di
+estrazione, non è la frase della fonte: una citazione fra virgolette presa da un fatto vale come
+verificata solo se anche la pagina che quel fatto cita la contiene alla lettera, letta
+dall'indice del testo per nome del file (<code>verify_quotes(…, page_text=…)</code>, <code>evidence.py:600-700</code>;
+<code>StandardTextRAGPipeline.page_text</code>, <code>text_rag/pipeline.py:234-259</code>). Senza, il controllo toglie
+le virgolette e l'inglese della fonte resta dentro una frase italiana come se fosse parola della
+risposta. Si accende con <code>verify_quotes_on_fact_pages</code> (spento nella libreria, <code>config.py:153</code>;
+<code>DEMO_QUOTES_ON_FACT_PAGES</code>, default <code>1</code>, <code>0</code> con <code>DEMO_PROFILE=prima</code>, <code>product/config.py:124</code>),
+e la scelta è fatta a <code>core.py:1936-1942</code>.</p>
+<p><strong>La frase "Dalla fonte".</strong> Fra i passi di testo delle prove sceglie la frase con il punteggio
+di definizione più alto (<code>:1715-1730</code>). Con <code>strict_definition_subject</code> (spento nella libreria,
+<code>config.py:140</code>; <code>DEMO_STRICT_DEFINITIONS</code>, default <code>1</code>, <code>product/config.py:135</code>) una frase
+vale come definizione solo se il termine ne è il soggetto, e se il punteggio è 0,5 o meno
+(una menzione semplice) la risposta non si apre con nessuna citazione (<code>:1721-1736</code>). Esempio
+del commento di configurazione: "Il Totale biochar è la media…" definisce il totale, non il
+biochar (<code>product/config.py:138-140</code>).</p>
+<p>Con <code>check_source_definition</code> (spento nella libreria, <code>config.py:144</code>; <code>DEMO_CHECK_SOURCE_DEFINITION</code>,
+default <code>1</code>, <code>product/config.py:141-143</code>) la scelta della frase ha due controlli in più, che
+riguardano solo la citazione e non l'ordine dei passi: un verbo di definizione non conta se la
+sua proposizione abbina un articolo determinativo a un superlativo ("rappresenta la pratica che
+ha il minor impatto", <code>_RANKING_RE</code>, <code>questions.py:116-120</code>, usato a <code>:453</code>), e la frase non si
+ripete se la risposta ne contiene già metà delle sequenze di cinque parole, anche quando la
+cita senza le prime parole (<code>questions.restates</code>, <code>questions.py:122-140</code>; <code>core.py:1741-1747</code>).
+I casi sono quelli del messaggio del commit <code>d4ef513</code>: «Il compostaggio rappresenta la pratica che
+ha il minor impatto…» contava come definizione, e una frase già citata senza le prime parole
+sfuggiva al controllo sui primi 80 caratteri.</p>
+<p><strong>Conoscenza generale e sua etichetta.</strong> Con <code>allow_parametric_fallback</code> (spento nella libreria,
+<code>config.py:235</code>; <code>DEMO_PARAMETRIC_FALLBACK</code>, default <code>1</code>, <code>product/config.py:193</code>) il prompt di
+risposta permette al modello di rispondere dalla propria conoscenza quando il contesto non copre
+la domanda, purché marchi ogni affermazione non sostenuta con «(not in the retrieved evidence)»
+(<code>llm/prompts.py:147-164, 408-411</code>). La pagina, la copia, l'esportazione e la console mostrano il
+segno come «(conoscenza generale, non dai documenti)» o «(general knowledge, not from the
+documents)», nella lingua della risposta (<code>label_general_knowledge</code>, <code>product/ui.py:388-412</code>,
+usata da <code>split_answer</code>, <code>ui.py:443</code>, e dall'anteprima in streaming, <code>product/app.py:558</code>); il
+registro conserva la risposta come l'ha prodotta il modello (docstring di <code>split_answer</code>,
+<code>ui.py:430-436</code>). Con <code>DEMO_PARAMETRIC_FALLBACK=0</code> (serve riavviare l'interfaccia) il prompt
+contiene la regola «Answer using ONLY the provided context» e nessuna istruzione di marcatura
+(<code>llm/prompts.py:165-170</code>), per cui al modello non è chiesto di marcare nulla e la pagina non
+ha nessun segno da sostituire.</p>
+<p><strong>La riga sulle lacune.</strong> Con <code>cite_evidence</code> e <code>gap_reminder</code> (spento nella libreria,
+<code>config.py:96</code>; <code>DEMO_GAP_REMINDER</code>, default <code>1</code>, <code>product/config.py:106</code>) il prompt di
+risposta ripete in fondo che una lacuna si dice sull'argomento ("la resa per ettaro non è
+indicata"), mai sul contesto, sulle prove, sui passi o sul grafo (<code>src/graphrag/llm/prompts.py:414-426</code>).</p>
+<p>Il modello e i prompt sono in <code>src/graphrag/llm/</code> (<code>LLMManager</code>, <code>PromptLibrary</code>).</p>
+<h2 id="la-memoria-della-conversazione-solo-demo">La memoria della conversazione (solo demo)<a class="headerlink" href="#la-memoria-della-conversazione-solo-demo" title="Permanent link">&para;</a></h2>
+<p><code>invoke</code> (<code>:2500-2675</code>) accetta una <code>ConversationMemory</code> (<code>agent/memory.py</code>). Il CLI e le
+campagne non la passano (<code>:2510-2512</code>). Con la memoria, dal secondo turno:</p>
+<ul>
+<li>la domanda viene riscritta dal modello in forma autonoma, <strong>solo per il recupero</strong>: la
+  risposta e la sua lingua seguono le parole digitate (<code>:2421-2498, 2579-2601</code>);</li>
+<li>se la riscrittura ha tolto un soggetto che la domanda nominava ed è un nome del grafo, la
+  domanda viene trattata come nuova (<code>_drops_named_subject</code>, <code>:876-891, 2584-2598</code>);</li>
+<li>la trascrizione dei turni precedenti va nel prompt della risposta (<code>:2565-2567</code>);</li>
+<li>se la domanda ripete una frase di una risposta precedente, il documento che la sosteneva
+  passa in cima al recupero del testo (<code>:2572-2578</code>).</li>
+</ul>
+<p>La forma resa autonoma (<code>resolved_question</code>) è quella che leggono la ricerca nell'ontologia e
+la riscrittura del giro successivo (<code>:576, 1088-1090, 2600-2601</code>).</p>
+<h2 id="cosa-restituisce">Cosa restituisce<a class="headerlink" href="#cosa-restituisce" title="Permanent link">&para;</a></h2>
+<p>Lo stato finale del grafo (risposta, prove, conteggi per canale, rapporti dei controlli, e
+con l'ontologia <code>ontology_match</code> e <code>ontology_check</code>) più <code>latency_ms</code> e <code>stage_timings_ms</code>,
+i tempi di ogni nodo (<code>:2647-2651</code>, <code>_timed</code> a <code>:475-505</code>).</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Piede" >
+        
+          
+          <a href="../06_retrieval/" class="md-footer__link md-footer__link--prev" aria-label="Precedente: Retrieval e strategie">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Precedente
+              </span>
+              <div class="md-ellipsis">
+                Retrieval e strategie
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../08_evaluation/" class="md-footer__link md-footer__link--next" aria-label="Successivo: Valutazione">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Successivo
+              </span>
+              <div class="md-ellipsis">
+                Valutazione
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

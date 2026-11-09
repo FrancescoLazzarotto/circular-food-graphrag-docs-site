@@ -1,0 +1,3451 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../01_demo/">
+      
+      
+        <link rel="next" href="../03_ask_question/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Servire i modelli - circular-food-graphrag — documentazione</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../assets/status.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#servire-i-modelli" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../.." title="circular-food-graphrag — documentazione" class="md-header__button md-logo" aria-label="circular-food-graphrag — documentazione" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            circular-food-graphrag — documentazione
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Servire i modelli
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Tema scuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Tema scuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Tema chiaro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Tema chiaro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../00_start/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Inizia qui
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Guide pratiche
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../20_concepts/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Come funziona
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../40_operations/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Server e servizi
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../50_handover/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Consegne
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../90_meta/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Sulla documentazione
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="circular-food-graphrag — documentazione" class="md-nav__button md-logo" aria-label="circular-food-graphrag — documentazione" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    circular-food-graphrag — documentazione
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../00_start/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inizia qui
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Inizia qui
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_start/01_repo_tour/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Giro della repo
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_start/02_house_rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPU, porte e dischi
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_start/03_access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accesso al server
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_start/04_environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ambiente Python
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_start/05_first_day/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Il primo giorno
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_start/06_glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossario
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide pratiche
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guide pratiche
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_demo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Avviare e fermare la demo
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Servire i modelli
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Servire i modelli
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quando-serve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quando serve
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cosa-tocca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cosa tocca
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gli-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gli script
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gli script">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-variabili-che-cambiano-uno-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le variabili che cambiano uno script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hf-home" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dove stanno i pesi: HF_HOME
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avviare-un-modello" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Avviare un modello
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fermare-un-modello" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fermare un modello
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scelte-che-non-vanno-toccate-senza-motivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scelte che non vanno toccate senza motivo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#come-il-codice-trova-i-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Come il codice trova i server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ricreare-lambiente-vllm-serve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ricreare l'ambiente vllm-serve
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#se-qualcosa-va-storto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Se qualcosa va storto
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_ask_question/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fare una domanda dal terminale
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_run_campaign/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lanciare una campagna
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_retrieval_matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matrice di retrieval
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_question_suite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generare una suite di domande
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_analyse_run/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analizzare un run
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_score_run/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Valutare un run
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09_production_graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Il grafo di produzione
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_corpus_update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aggiornare i documenti della demo
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11_graph_lots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aggiungere documenti al grafo (lotti)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12_kg_rebuild/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ricostruire il grafo
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13_code_changes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modificare il codice
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14_cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Il cluster (non più usato)
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15_end_to_end/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Percorsi completi
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../20_concepts/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Come funziona
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Come funziona
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../20_concepts/01_architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architettura
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../20_concepts/02_data_flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso dei dati
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../20_concepts/03_corpus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Il corpus
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../20_concepts/04_kg_pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Come si costruisce il grafo
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../20_concepts/05_graph_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modello del grafo
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../20_concepts/06_retrieval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Retrieval e strategie
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../20_concepts/07_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    L'agente
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../20_concepts/08_evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Valutazione
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../20_concepts/10_measured_negatives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Già provato, non funziona
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../40_operations/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Server e servizi
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Server e servizi
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../40_operations/01_server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    La macchina
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../40_operations/02_services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Servizi e timer
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../40_operations/03_ports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Porte
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../40_operations/04_data_locations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dove stanno i dati
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../40_operations/05_backups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backup e ripristino
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../40_operations/06_troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Problemi noti e soluzioni
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../50_handover/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Consegne
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Consegne
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../50_handover/01_project_state/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stato del progetto
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../50_handover/02_open_issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Questioni aperte
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../50_handover/03_known_traps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trappole note
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../50_handover/04_contacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dove stanno le credenziali
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../90_meta/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sulla documentazione
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sulla documentazione
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../90_meta/conventions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regole di scrittura
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--verified" title="Verificata sul codice / Verified against the code">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../90_meta/status/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stato della documentazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inventory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Inventory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../90_meta/inventory/env_vars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environment variables read in code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../90_meta/inventory/python_modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python modules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../90_meta/inventory/untracked_and_external/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Untracked and external locations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quando-serve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quando serve
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cosa-tocca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cosa tocca
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gli-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gli script
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gli script">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-variabili-che-cambiano-uno-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le variabili che cambiano uno script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hf-home" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dove stanno i pesi: HF_HOME
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avviare-un-modello" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Avviare un modello
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fermare-un-modello" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fermare un modello
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scelte-che-non-vanno-toccate-senza-motivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scelte che non vanno toccate senza motivo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#come-il-codice-trova-i-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Come il codice trova i server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ricreare-lambiente-vllm-serve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ricreare l'ambiente vllm-serve
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#se-qualcosa-va-storto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Se qualcosa va storto
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="servire-i-modelli">Servire i modelli<a class="headerlink" href="#servire-i-modelli" title="Permanent link">&para;</a></h1>
+<h2 id="quando-serve">Quando serve<a class="headerlink" href="#quando-serve" title="Permanent link">&para;</a></h2>
+<p>Il progetto non carica i modelli dentro i propri processi: li chiede a <strong>server vLLM</strong>
+separati, che parlano lo stesso protocollo delle API di OpenAI (<code>/v1/models</code>,
+<code>/v1/chat/completions</code>, <code>/v1/embeddings</code>). Servono:</p>
+<ul>
+<li>un <strong>generatore</strong>, che scrive le risposte (demo, campagne, giudice);</li>
+<li>un <strong>encoder</strong>, che trasforma nomi dei nodi e domande in vettori nello stesso spazio
+  multilingue, così una domanda in inglese trova un concetto scritto solo in italiano
+  (docstring di <code>src/graphrag/embeddings.py:1-8</code>);</li>
+<li>durante la costruzione del grafo, un <strong>estrattore</strong>, che legge i pezzi di testo e ne
+  ricava le triple.</li>
+</ul>
+<p>Per la demo completa c'è uno script unico: <a href="../01_demo/">Avviare e fermare la demo</a>. Questa
+guida serve quando si vuole un modello alla volta: un esperimento, l'estrazione del grafo,
+un confronto.</p>
+<h2 id="cosa-tocca">Cosa tocca<a class="headerlink" href="#cosa-tocca" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>risorsa</th>
+<th>effetto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPU</td>
+<td>una quota della memoria fissata da <code>--gpu-memory-utilization</code> (tabella sotto), presa all'avvio e tenuta finché il server è acceso</td>
+</tr>
+<tr>
+<td>disco</td>
+<td>i pesi nella cartella indicata da <code>HF_HOME</code>, di default <code>/mnt/storage/hf-cache</code> (<a href="#hf-home">sotto</a>); se mancano, vengono scaricati al primo avvio</td>
+</tr>
+<tr>
+<td>rete</td>
+<td>ogni server ascolta solo su <code>127.0.0.1</code>, senza autenticazione (<code>start_vllm_qwen38_27b.sh:29-31</code>)</td>
+</tr>
+<tr>
+<td>tempo</td>
+<td>caricare un modello da 27-32 miliardi di parametri a cache del disco fredda richiede minuti (commento a <code>start_demo.sh:47</code>)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="gli-script">Gli script<a class="headerlink" href="#gli-script" title="Permanent link">&para;</a></h2>
+<p>Tutti in <code>scripts/serving/</code>. Ognuno lancia <code>vllm serve</code> <strong>in primo piano</strong> con <code>exec</code>:
+il terminale resta occupato finché il server gira.</p>
+<table>
+<thead>
+<tr>
+<th>script</th>
+<th>modello (default)</th>
+<th>porta</th>
+<th>GPU</th>
+<th>memoria GPU</th>
+<th>note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>start_vllm_encoder.sh</code></td>
+<td><code>intfloat/multilingual-e5-base</code></td>
+<td>8002</td>
+<td>1</td>
+<td>0.12</td>
+<td><code>--runner pooling</code> (fa vettori, non testo); <code>--max-model-len 512</code>; esce subito con <code>encoder already serving</code> se la porta risponde già (<code>:26-29</code>)</td>
+</tr>
+<tr>
+<td><code>start_vllm_qwen38_27b.sh</code></td>
+<td><code>RedHatAI/Qwen3.8-27B-INT4</code>, revisione fissata</td>
+<td>8001</td>
+<td>1</td>
+<td>0.90</td>
+<td>generatore della demo; template di chat che spegne il "ragionamento"; quota dichiarata nello script come quella che segue la cache KV del compito (<code>:9-10</code>)</td>
+</tr>
+<tr>
+<td><code>start_vllm_qwen25_7b.sh</code></td>
+<td><code>Qwen/Qwen2.5-7B-Instruct</code></td>
+<td>8001</td>
+<td>1</td>
+<td>0.87</td>
+<td></td>
+</tr>
+<tr>
+<td><code>start_vllm_qwen3.sh</code></td>
+<td><code>Qwen/Qwen3-30B-A3B-Instruct-2507-FP8</code></td>
+<td>8001</td>
+<td>1</td>
+<td>0.87</td>
+<td></td>
+</tr>
+<tr>
+<td><code>start_vllm_gemma4_31b.sh</code></td>
+<td><code>google/gemma-4-31B-it-qat-w4a16-ct</code></td>
+<td>8001</td>
+<td>1</td>
+<td>0.85</td>
+<td></td>
+</tr>
+<tr>
+<td><code>start_vllm_qwen3_32b.sh</code></td>
+<td><code>Qwen/Qwen3-32B-AWQ</code></td>
+<td>8000</td>
+<td><strong>0</strong></td>
+<td>0.87</td>
+<td>l'estrattore del grafo; scheda con <code>VLLM_QWEN3_32B_GPU</code> (<code>:10</code>)</td>
+</tr>
+<tr>
+<td><code>start_vllm.sh</code></td>
+<td><code>Qwen/Qwen2.5-32B-Instruct-AWQ</code></td>
+<td>8000</td>
+<td><strong>0</strong></td>
+<td>0.87</td>
+<td><code>--dtype float16</code>; il modello si sceglie con <code>VLLM_MODEL_NAME</code> (<code>:9</code>), la scheda con <code>VLLM_GPU</code> (<code>:11</code>); pesi non in cache</td>
+</tr>
+<tr>
+<td><code>start_vllm_qwen25_72b.sh</code></td>
+<td><code>Qwen/Qwen2.5-72B-Instruct-AWQ</code></td>
+<td>8000</td>
+<td><strong>0,1</strong></td>
+<td>0.90</td>
+<td>due GPU (<code>--tensor-parallel-size 2</code>); vuole <strong>entrambe</strong> le schede libere al 90%; pesi non in cache</td>
+</tr>
+<tr>
+<td><code>start_vllm_qwen38_27b_bf16.sh</code></td>
+<td><code>Qwen/Qwen3.8-27B</code></td>
+<td>8000</td>
+<td><strong>0,1</strong></td>
+<td>0.88</td>
+<td>due GPU; vuole <strong>entrambe</strong> le schede libere all'88%; pesi non in cache</td>
+</tr>
+</tbody>
+</table>
+<p>Parametri comuni ai generatori: <code>--max-model-len 32768</code>, <code>--max-num-seqs 16</code>,
+<code>--enable-prefix-caching</code>, <code>--enable-chunked-prefill</code> (per esempio
+<code>start_vllm_qwen38_27b.sh:33-44</code>). <code>--max-model-len</code> conta: vLLM rifiuta una richiesta
+quando prompt più token da generare superano quel limite, e l'estrazione chiede fino a
+4096 token nuovi (commento a <code>start_vllm.sh:4-5</code>).</p>
+<p>"Pesi in cache" misurato con <code>ls /mnt/storage/hf-cache/hub</code>.</p>
+<h3 id="le-variabili-che-cambiano-uno-script">Le variabili che cambiano uno script<a class="headerlink" href="#le-variabili-che-cambiano-uno-script" title="Permanent link">&para;</a></h3>
+<p>Ogni valore si può cambiare con una variabile d'ambiente, il cui nome dipende dallo
+script. Le più utili:</p>
+<table>
+<thead>
+<tr>
+<th>cosa</th>
+<th>variabili</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPU</td>
+<td><code>EMBED_GPU</code>, <code>VLLM_QWEN38_GPU</code>, <code>VLLM_QWEN25_7B_GPU</code>, <code>VLLM_QWEN3_GPU</code>, <code>VLLM_GEMMA4_GPU</code>, <code>VLLM_QWEN3_32B_GPU</code>, <code>VLLM_GPU</code> (per <code>start_vllm.sh</code>), <code>VLLM_QWEN25_72B_GPUS</code>, <code>VLLM_QWEN38_BF16_GPUS</code></td>
+</tr>
+<tr>
+<td>porta</td>
+<td><code>EMBED_PORT</code>, <code>VLLM_QWEN38_PORT</code>, <code>VLLM_QWEN25_7B_PORT</code>, <code>VLLM_QWEN3_PORT</code>, <code>VLLM_GEMMA4_PORT</code>, <code>VLLM_QWEN3_32B_PORT</code>, <code>VLLM_PORT</code>, <code>VLLM_QWEN25_72B_PORT</code>, <code>VLLM_QWEN38_BF16_PORT</code></td>
+</tr>
+<tr>
+<td>memoria GPU</td>
+<td><code>EMBED_GPU_UTIL</code>, <code>VLLM_QWEN38_UTIL</code>, <code>VLLM_GEMMA4_UTIL</code>, <code>VLLM_QWEN25_72B_UTIL</code>, <code>VLLM_QWEN38_BF16_UTIL</code> (gli altri hanno 0.87 scritto nel comando)</td>
+</tr>
+<tr>
+<td>modello</td>
+<td><code>GRAPHRAG_EMBED_MODEL</code>, <code>VLLM_QWEN38_MODEL</code>, <code>VLLM_QWEN25_7B_MODEL</code>, <code>VLLM_QWEN3_MODEL</code>, <code>VLLM_GEMMA4_MODEL</code>, <code>VLLM_QWEN3_32B_MODEL</code>, <code>VLLM_MODEL_NAME</code>, <code>VLLM_QWEN25_72B_MODEL</code>, <code>VLLM_QWEN38_BF16_MODEL</code></td>
+</tr>
+<tr>
+<td>tutti</td>
+<td><code>VLLM_BIN</code> (quale <code>vllm</code> usare), <code>HF_HOME</code> (cache dei pesi), <code>VLLM_HOST</code> (indirizzo; <code>0.0.0.0</code> per aprire il server alla rete)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="hf-home">Dove stanno i pesi: <code>HF_HOME</code><a class="headerlink" href="#hf-home" title="Permanent link">&para;</a></h3>
+<p>Ogni script <code>start_vllm*.sh</code> ha una riga <code>export HF_HOME="${HF_HOME:-/mnt/storage/hf-cache}"</code>:
+una <code>HF_HOME</code> già esportata vince, altrimenti vale <code>/mnt/storage/hf-cache</code>. Le righe sono
+<code>start_vllm.sh:16</code>, <code>start_vllm_encoder.sh:24</code>, <code>start_vllm_gemma4_31b.sh:19</code>,
+<code>start_vllm_qwen25_72b.sh:17</code>, <code>start_vllm_qwen25_7b.sh:11</code>, <code>start_vllm_qwen38_27b.sh:27</code>,
+<code>start_vllm_qwen38_27b_bf16.sh:21</code>, <code>start_vllm_qwen3.sh:15</code>, <code>start_vllm_qwen3_32b.sh:18</code>.</p>
+<ul>
+<li>Cambiare cartella dei pesi vuol dire esportare <code>HF_HOME=&lt;cartella&gt;</code> prima dello script.
+  <code>start_demo.sh</code> non imposta <code>HF_HOME</code> e lancia server e interfaccia ereditando l'ambiente
+  (<code>start_demo.sh:144-146</code>, <code>:206-210</code>): una <code>HF_HOME</code> esportata prima di <code>start_demo.sh</code>
+  arriva a tutti i server che avvia.</li>
+<li>La colonna "pesi in cache" di <a href="../01_demo/#modelli-disponibili">Avviare e fermare la demo</a> vale
+  per <code>/mnt/storage/hf-cache</code>. In un'altra cartella un modello che non c'è viene scaricato al
+  primo avvio.</li>
+<li>Lo stato della cartella predefinita, misurato con <code>ls -ld</code>:
+  <code>drwxrwsr-x+</code>, gruppo <code>llmproject</code> (permessi di scrittura al gruppo); 222 GB con <code>du -sh</code>.</li>
+</ul>
+<h2 id="avviare-un-modello">Avviare un modello<a class="headerlink" href="#avviare-un-modello" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Guardare chi occupa le GPU:
+   <div class="highlight"><pre><span></span><code>nvidia-smi
+</code></pre></div></li>
+<li>Avviare <strong>prima l'encoder</strong>, così si prende la sua quota della GPU 1 prima del
+   generatore (<code>COMMANDS.md</code>, sezione 1):
+   <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/srv/projects/graphllm/experiments/graphRAGPipelineExp1
+setsid<span class="w"> </span>nohup<span class="w"> </span>bash<span class="w"> </span>scripts/serving/start_vllm_encoder.sh<span class="w"> </span>&gt;<span class="w"> </span>scripts/serving/logs/encoder.log<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">&amp;</span>
+</code></pre></div></li>
+<li>Avviare il generatore, nello stesso modo:
+   <div class="highlight"><pre><span></span><code>setsid<span class="w"> </span>nohup<span class="w"> </span>bash<span class="w"> </span>scripts/serving/start_vllm_qwen38_27b.sh<span class="w"> </span>&gt;<span class="w"> </span>scripts/serving/logs/qwen38_int4.log<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">&amp;</span>
+</code></pre></div>
+   <code>setsid nohup … &amp;</code> stacca il server dal terminale, così sopravvive alla chiusura della
+   sessione. La cartella <code>scripts/serving/logs/</code> è ignorata da git (<code>.gitignore:34</code>) e oggi
+   contiene log scritti così a mano: nessuno script ci scrive da solo.</li>
+<li>Aspettare che risponda:
+   <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span>http://localhost:8001/v1/models<span class="w"> </span><span class="p">|</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>json.tool
+</code></pre></div>
+   Finché carica, <code>curl</code> non risponde. Quando è pronto restituisce un JSON con l'<code>id</code> del
+   modello.</li>
+</ol>
+<p>L'<strong>estrattore</strong> del grafo chiede l'87% di una scheda: non sta sulla stessa scheda del
+generatore della demo (90%), vLLM si fermerebbe all'avvio per memoria libera insufficiente
+(vedi <a href="../../00_start/02_house_rules/">GPU, porte e dischi</a>). Per lanciarlo sulla GPU 1,
+prima si ferma il generatore:</p>
+<div class="highlight"><pre><span></span><code>bash<span class="w"> </span>scripts/serving/stop_demo.sh<span class="w"> </span>qwen38-27b
+<span class="nv">VLLM_QWEN3_32B_GPU</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>setsid<span class="w"> </span>nohup<span class="w"> </span>bash<span class="w"> </span>scripts/serving/start_vllm_qwen3_32b.sh<span class="w"> </span>&gt;<span class="w"> </span>scripts/serving/logs/qwen3_32b.log<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">&amp;</span>
+</code></pre></div>
+<h2 id="fermare-un-modello">Fermare un modello<a class="headerlink" href="#fermare-un-modello" title="Permanent link">&para;</a></h2>
+<p>Un server avviato da <code>start_demo.sh</code> si ferma con <code>stop_demo.sh &lt;etichetta&gt;</code> (vedi
+<a href="../01_demo/#fermare">la guida della demo</a>). Uno avviato a mano non ha un file di pid:</p>
+<div class="highlight"><pre><span></span><code>ss<span class="w"> </span>-ltnp<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">':8001 '</span><span class="w">          </span><span class="c1"># quale pid ascolta sulla porta</span>
+<span class="nb">kill</span><span class="w"> </span>&lt;pid&gt;<span class="w">                        </span><span class="c1"># poi ricontrollare con nvidia-smi che la memoria sia liberata</span>
+</code></pre></div>
+<p>Un server vLLM può ignorare <code>SIGTERM</code> mentre carica i pesi (commento a <code>stop_demo.sh:4-7</code>):
+se dopo 30 secondi è ancora vivo, <code>kill -9 &lt;pid&gt;</code>.</p>
+<h2 id="scelte-che-non-vanno-toccate-senza-motivo">Scelte che non vanno toccate senza motivo<a class="headerlink" href="#scelte-che-non-vanno-toccate-senza-motivo" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>La revisione del generatore è fissata.</strong> <code>start_vllm_qwen38_27b.sh:12-13,16</code> usa la
+  revisione <code>2fb0debc…</code> di <code>RedHatAI/Qwen3.8-27B-INT4</code>: le revisioni successive mettono la
+  cache dell'attenzione in FP8, che le A40 non sanno eseguire, e il risultato è testo senza
+  senso. Togliere la revisione riporta il problema.</li>
+<li><strong>Il "ragionamento" è spento dal template.</strong> I modelli Qwen3 e Qwen3.8 di default
+  scrivono un ragionamento prima della risposta. I template
+  <code>scripts/serving/chat_templates/qwen3_nothink.jinja</code> e <code>qwen38_nothink.jinja</code> lo
+  spengono, a meno che il client lo chieda con <code>chat_template_kwargs {"enable_thinking":
+  true}</code> (commento a <code>start_vllm_qwen38_27b.sh:4-7</code>; <code>qwen38_nothink.jinja:46,165</code>).</li>
+<li><strong>Encoder e indice devono usare lo stesso modello.</strong> L'indice vettoriale del grafo è
+  costruito con i vettori di <code>intfloat/multilingual-e5-base</code>. Cambiare il modello
+  dell'encoder senza ricostruire l'indice degrada il recupero <strong>senza errori</strong>
+  (<code>start_vllm_encoder.sh:13-15</code>, <code>embeddings.py:6-8</code>). Per ricostruire:
+  <code>scripts/kg/kg_vector_index.py</code>, vedi <a href="../12_kg_rebuild/">Ricostruire il grafo</a>.</li>
+<li><strong><code>import vllm</code> non funziona in <code>graphllm</code>.</strong> Gli script usano l'ambiente <code>vllm-serve</code>
+  tramite <code>VLLM_BIN</code>. Mai <code>conda run -n graphllm vllm</code> (<code>COMMANDS.md</code>, sezione 1).</li>
+</ul>
+<h2 id="come-il-codice-trova-i-server">Come il codice trova i server<a class="headerlink" href="#come-il-codice-trova-i-server" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>chi</th>
+<th>variabili</th>
+<th>default di <code>.env.example</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>encoder, per recupero e indice</td>
+<td><code>GRAPHRAG_EMBED_BASE_URL</code>, <code>GRAPHRAG_EMBED_MODEL</code></td>
+<td><code>http://localhost:8002/v1</code>, <code>intfloat/multilingual-e5-base</code></td>
+</tr>
+<tr>
+<td>generatore, con <code>--vllm</code> sulla riga di comando e per il giudice</td>
+<td><code>VLLM_BASE_URL</code>, <code>VLLM_MODEL_NAME</code>, <code>VLLM_API_KEY</code></td>
+<td><code>http://localhost:8000/v1</code>, <code>Qwen/Qwen2.5-32B-Instruct</code></td>
+</tr>
+</tbody>
+</table>
+<p>Attenzione: il default punta alla porta 8000, mentre il generatore della demo sta sulla
+8001. Per un esperimento con quel generatore si esportano <code>VLLM_BASE_URL</code> e
+<code>VLLM_MODEL_NAME</code>, oppure si passano le opzioni del runner: vedi
+<a href="../04_run_campaign/">Lanciare una campagna</a>.</p>
+<h2 id="ricreare-lambiente-vllm-serve">Ricreare l'ambiente <code>vllm-serve</code><a class="headerlink" href="#ricreare-lambiente-vllm-serve" title="Permanent link">&para;</a></h2>
+<p>Gli script trovano l'ambiente tramite <code>VLLM_BIN</code> (il percorso dell'eseguibile <code>vllm</code>): un
+ambiente ricreato altrove si usa esportando quella variabile.</p>
+<p>Il file con l'elenco è
+<a href="../../40_operations/env_snapshots/vllm-serve.pip-freeze.txt"><code>env_snapshots/vllm-serve.pip-freeze.txt</code></a>
+(176 righe: vLLM 0.19.1, torch 2.10.0, FlashInfer 0.6.6, transformers 5.13.0). Il percorso
+<code>docs/40_operations/…</code> è relativo alla cartella di questa documentazione.</p>
+<h2 id="se-qualcosa-va-storto">Se qualcosa va storto<a class="headerlink" href="#se-qualcosa-va-storto" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>sintomo</th>
+<th>causa</th>
+<th>rimedio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ModuleNotFoundError: No module named 'vllm'</code> o errori di import</td>
+<td>lanciato con il <code>vllm</code> di <code>graphllm</code></td>
+<td>usare gli script; controllare <code>VLLM_BIN</code></td>
+</tr>
+<tr>
+<td>errore di memoria CUDA all'avvio</td>
+<td>GPU già occupata, oppure due modelli grandi insieme sulla GPU 1</td>
+<td><code>nvidia-smi</code>; fermare il modello precedente; ridurre la quota con la variabile <code>…_UTIL</code></td>
+</tr>
+<tr>
+<td>risposte senza senso da Qwen3.8-27B</td>
+<td>revisione del modello diversa da quella fissata</td>
+<td>non esportare <code>VLLM_QWEN38_REVISION</code></td>
+</tr>
+<tr>
+<td>il server parte ma impiega molti minuti, il log mostra download</td>
+<td>pesi non in cache</td>
+<td>attendere; controllare lo spazio con <code>df -h /mnt/storage</code></td>
+</tr>
+<tr>
+<td>un client riceve <code>400</code> su richieste lunghe</td>
+<td>prompt più token richiesti oltre <code>--max-model-len</code> (32768): vLLM solleva <code>VLLMValidationError</code> (<code>vllm/renderers/params.py:414-424</code>) e la trasforma in <code>400 Bad Request</code> (<code>vllm/entrypoints/utils.py:318-320</code>, venv <code>vllm-serve</code>)</td>
+<td>ridurre il contesto o i token richiesti</td>
+</tr>
+<tr>
+<td><code>start_demo.sh</code> non riesce ad avviare uno script <code>start_vllm*.sh</code></td>
+<td>lo script non ha il bit di esecuzione: <code>start_demo.sh</code> lo esegue direttamente (<code>start_demo.sh:146</code>). L'indice di git registra tutti i 433 file tracciati con modo <code>100644</code> e nessuno con <code>100755</code> (<code>git ls-files -s</code>) e la repo ha <code>core.fileMode=false</code> (<code>git config core.fileMode</code>): git non segnala la differenza di permessi, e uno script riscritto da un checkout resta senza il bit</td>
+<td><code>chmod +x scripts/serving/*.sh</code></td>
+</tr>
+<tr>
+<td>il recupero in inglese peggiora senza errori</td>
+<td>encoder spento o con un modello diverso da quello dell'indice</td>
+<td><code>curl :8002/v1/models</code>; controllare <code>GRAPHRAG_EMBED_MODEL</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Piede" >
+        
+          
+          <a href="../01_demo/" class="md-footer__link md-footer__link--prev" aria-label="Precedente: Avviare e fermare la demo">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Precedente
+              </span>
+              <div class="md-ellipsis">
+                Avviare e fermare la demo
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../03_ask_question/" class="md-footer__link md-footer__link--next" aria-label="Successivo: Fare una domanda dal terminale">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Successivo
+              </span>
+              <div class="md-ellipsis">
+                Fare una domanda dal terminale
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
