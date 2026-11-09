@@ -2592,6 +2592,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pubblicare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pubblicare il sito
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2883,6 +2894,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pubblicare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pubblicare il sito
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2928,7 +2950,8 @@ nella repo, lanciare esperimenti e inferenza, tenere in piedi demo e grafo.</p>
 <li><strong>I documenti della repo</strong> (<code>README.md</code>, <code>docs/</code>, <code>COMMANDS.md</code>, <code>AGENTS.md</code>) servono a
    incrociare i fatti, non sono fonti. Le differenze vanno nelle lacune note.</li>
 <li><strong>Niente segreti.</strong> Il nome di una variabile sì, il valore preso da <code>.env</code> mai. Per le
-   credenziali si scrive dove stanno e chi le gestisce.</li>
+   credenziali si scrive dove stanno e chi le gestisce. Il sito è pubblico: niente indirizzo
+   interno del server, e al posto del nome dell'account personale si scrive <code>&lt;utente&gt;</code>.</li>
 <li><strong>Solo il presente.</strong> Niente storia ("prima era…") e niente piani. Le idee già
    provate senza guadagno vanno in <a href="../../20_concepts/10_measured_negatives/">Già provato, non funziona</a>.</li>
 <li><strong>Linguaggio piano.</strong> Ogni termine tecnico si spiega la prima volta che compare nella
@@ -3013,9 +3036,20 @@ python3 -I _tools/docs_tools.py scaffold           # segnaposto delle pagine fis
 python3 -I _tools/docs_tools.py check              # controlli; scrive docs/90_meta/status.it.md
 .venv/bin/mkdocs build                             # costruisce il sito
 .venv/bin/mkdocs serve -a 127.0.0.1:8710   # sito di prova che si aggiorna da solo
+.venv/bin/mkdocs gh-deploy --remote-name site    # pubblica il sito (vedi sotto)
 </code></pre></div>
 <p><code>REPO=/altro/percorso</code> cambia la repo di codice da leggere. Il venv si ricrea con
 <code>python3 -m venv .venv &amp;&amp; .venv/bin/pip install -r requirements.txt</code>.</p>
+<h2 id="pubblicare">Pubblicare il sito<a class="headerlink" href="#pubblicare" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>site<span class="w"> </span>https://github.com/FrancescoLazzarotto/circular-food-graphrag-docs-site.git<span class="w">   </span><span class="c1"># una volta per copia della repo</span>
+.venv/bin/mkdocs<span class="w"> </span>gh-deploy<span class="w"> </span>--remote-name<span class="w"> </span>site<span class="w">            </span><span class="c1"># costruisce e spinge il ramo gh-pages</span>
+</code></pre></div>
+<p><code>gh-deploy</code> costruisce il sito dalla cartella così com'è (anche con modifiche non committate),
+lo scrive nel ramo <code>gh-pages</code> e lo spinge sulla repo pubblica
+<code>circular-food-graphrag-docs-site</code>, che contiene solo l'HTML: sorgenti e storia restano qui.
+Il push usa le credenziali GitHub di chi lo lancia. GitHub Pages serve il ramo <code>gh-pages</code>
+(<em>Settings → Pages</em>, «Deploy from a branch», <code>gh-pages</code>, <code>/ (root)</code>) all'indirizzo
+https://francescolazzarotto.github.io/circular-food-graphrag-docs-site/; dopo un push l'aggiornamento richiede un paio di minuti.</p>
 
 
 
