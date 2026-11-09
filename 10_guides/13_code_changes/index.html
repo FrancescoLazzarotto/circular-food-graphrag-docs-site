@@ -2993,27 +2993,27 @@ cosa controlla la CI su GitHub.</p>
   recupero solo in <code>strategies.py</code> (<code>AGENTS.md:157-160</code>);</li>
 <li>il comportamento della <strong>demo</strong> si cambia in <code>product/config.py</code>, non in
   <code>graphrag.config</code> o <code>graphrag.strategies</code>: quelli sono le impostazioni con cui sono state
-  misurate le campagne (<code>AGENTS.md:241-242</code>);</li>
+  misurate le campagne (<code>AGENTS.md:242-243</code>);</li>
 <li>una chiave restituita da un nodo dell'agente e non dichiarata in <code>RAGState</code>
-  (<code>src/graphrag/types.py</code>) sparisce senza errore (<code>AGENTS.md:172-173, 196-198</code>);</li>
+  (<code>src/graphrag/types.py</code>) sparisce senza errore (<code>AGENTS.md:172-173, 197-199</code>);</li>
 <li>non aggiungere frasi generiche a <code>_REFUSAL_MARKERS</code> / <code>_INSUFFICIENT_MARKERS</code>
   (<code>src/graphrag/llm/refusal.py</code>): sono cercate come sottostringhe in tutta la risposta e
   alimentano sia la sostituzione della risposta sia una metrica pubblicata
-  (<code>AGENTS.md:232-234</code>);</li>
+  (<code>AGENTS.md:233-235</code>);</li>
 <li>cambiare <code>PromptLibrary.DEFAULT_DOMAIN_SCOPE</code> o le frasi del filtro di dominio richiede di
   rilanciare le tre suite <code>scripts/domain_gate/eval_domain_gate_llm.py</code>,
-  <code>eval_domain_gate_heldout.py</code>, <code>eval_domain_gate_entities.py</code> (<code>AGENTS.md:236-238</code>).</li>
+  <code>eval_domain_gate_heldout.py</code>, <code>eval_domain_gate_entities.py</code> (<code>AGENTS.md:237-239</code>).</li>
 </ul>
 <h2 id="test-che-fissano-comportamenti">Test che fissano comportamenti<a class="headerlink" href="#test-che-fissano-comportamenti" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>tests/test_audit_fixes.py</code>: 34 test, uno per ogni rilievo dell'audit del codice
-  (<code>AGENTS.md:294-297</code>; contati 34 <code>def test_</code>). Se una modifica ne
+  (<code>AGENTS.md:295-298</code>; contati 34 <code>def test_</code>). Se una modifica ne
   fa fallire uno, si è reintrodotto un difetto documentato.</li>
 <li>
 <p><code>tests/test_profiles.py</code> e <code>tests/test_profiles_match_runners.py</code>: bloccano il profilo
   <code>thesis_campaign</code> sia contro la configurazione registrata da una campagna vera sia contro
   quella che i runner producono oggi. Vanno lanciati quando si tocca <code>graphrag.profiles</code> o
-  le opzioni di un runner in <code>scripts/runners/</code> (<code>AGENTS.md:243-247</code>).</p>
+  le opzioni di un runner in <code>scripts/runners/</code> (<code>AGENTS.md:244-248</code>).</p>
 </li>
 <li>
 <p><code>tests/test_profile_prima.py</code>: 8 test (contati 8 <code>def test_</code>) sul profilo
